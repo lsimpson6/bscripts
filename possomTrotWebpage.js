@@ -33,10 +33,12 @@
             two.style = 'filter: blur(10px);';
         }
 
-        if (two.getBoundingClientRect().top <= 0 + fb.clientHeight) {
-            fb.style = "position: fixed; top: 0; left: 0; z-index: 20000 !important;";
-        }else {
-            fb.style = "";
+        if(!isMobileDevice){
+            if (two.getBoundingClientRect().top <= 0 + fb.clientHeight) {
+                fb.style = "position: fixed; top: 0; left: 0; z-index: 20000 !important;";
+            }else {
+                fb.style = "";
+            }
         }
 
         sy = window.scrollY;

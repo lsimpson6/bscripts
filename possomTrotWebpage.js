@@ -28,9 +28,9 @@
         }
 
         if(two.getBoundingClientRect().top <= window.innerHeight/2){
-            two.style = "";
+            two.classList.remove('blur');
         }else {
-            two.style = 'filter: blur(10px);';
+            two.classList.add('blur');
         }
 
         if(!isMobileDevice){

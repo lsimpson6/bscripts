@@ -6,6 +6,10 @@
     const floatingImages = document.querySelector('.floating-images');
     const red = document.querySelectorAll('.highlight-red');
 
+
+    window.addEventListener('load', ()=>{
+        if(isMobileDevice) document.getElementById('possomm-trot-trailer-video').setAttribute('controls', true);
+    })
     let sy = 0;
     window.addEventListener('scroll', () => {
 
@@ -64,10 +68,13 @@
             if (isPlaying) {
                 container.style = 'width: 100%; ' + styleSettings;
                 video.style = 'aspect-ratio: 16/9; ' + vSetting;
+                video.setAttribute('controls', true);
+                video.classList.rempve('notPlaying');
             } else {
                 container.style = 'width: 500px; ' + styleSettings;
                 video.style = 'height: 600px; ' + vSetting;
-
+                video.setAttribute('controls', false);
+                video.classList.rempve('notPlaying');
             }
         }
     }

@@ -6,10 +6,6 @@
     const floatingImages = document.querySelector('.floating-images');
     const red = document.querySelectorAll('.highlight-red');
 
-
-    window.addEventListener('load', ()=>{
-        if(isMobileDevice) document.getElementById('possomm-trot-trailer-video').setAttribute('controls', true);
-    })
     let sy = 0;
     window.addEventListener('scroll', () => {
 
@@ -49,35 +45,6 @@
     })
 
     var isPlaying = false;
-
-    function fullVideo() {
-
-        const styleSettings = 'position: absolute; right: 0; top: 50%; transform: translateY(-50%); transition: .3s ease all;';
-        const vSetting = 'width: 100%; object-fit: cover;';
-        let container = document.getElementById('possomm-trot-trailer-container');
-        let video = document.getElementById('possomm-trot-trailer-video');
-        
-        if(!isMobileDevice){
-            if (isPlaying || video.playing) {
-                isPlaying = false;
-            } else {
-                isPlaying = true;
-            }
-
-
-            if (isPlaying) {
-                container.style = 'width: 100%; ' + styleSettings;
-                video.style = 'aspect-ratio: 16/9; ' + vSetting;
-                video.setAttribute('controls', true);
-                video.classList.rempve('notPlaying');
-            } else {
-                container.style = 'width: 500px; ' + styleSettings;
-                video.style = 'height: 600px; ' + vSetting;
-                video.setAttribute('controls', false);
-                video.classList.rempve('notPlaying');
-            }
-        }
-    }
     function scrollToNext(){
         window.scrollTo({
             top: two.getBoundingClientRect().top,

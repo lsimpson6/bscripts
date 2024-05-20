@@ -21,11 +21,25 @@
         })
     })
 
+    const row = document.querySelectorAll('.bcs-widget-row');
+
+    row.forEach('click', ()=>{
+        try {
+            let value = row.getAttribute('data-targetElement');
+            ScrollToNext(value);
+        }catch(e){
+            
+        }
+    })
+
     function ScrollToNext(value){
-        const row = document.querySelectorAll('.bcs-widget-row');
-        window.scrollTo({
-            top: row[value].getBoundingClientRect().top,
-            left: 0,
-            behavior: "smooth",
-        })
+        try {
+            window.scrollTo({
+                top: row[value].getBoundingClientRect().top,
+                left: 0,
+                behavior: "smooth",
+            })
+        }catch(e){
+            
+        }
     }

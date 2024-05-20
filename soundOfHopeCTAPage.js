@@ -23,9 +23,9 @@
 
     const row = document.querySelectorAll('.bcs-widget-row');
 
-    row.forEach('click', ()=>{
+    row.forEach(r => r.addEventListener('click'), ()=>{
         try {
-            let value = row.getAttribute('data-targetElement');
+            let value = r.getAttribute('data-targetElement');
             ScrollToNext(value);
         }catch(e){
             

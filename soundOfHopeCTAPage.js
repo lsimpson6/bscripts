@@ -76,7 +76,7 @@
     scrolls.forEach(sc => sc.addEventListener('click', ()=>{
 
         const container = document.querySelector('.cards-container');
-        const superW = document.querySelector('.cv').innerWidth;
+        const superW = document.querySelector('.cv').clientWidth;
         
         switch (sc.getAttribute('data-direction')){
             case "right":

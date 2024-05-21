@@ -28,25 +28,16 @@ const scrollNextButtons = document.querySelectorAll('.scroll-next');
     scrollNextButtons.forEach(r => r.addEventListener('click'), ()=>{
         try {
             let value = r.getAttribute('data-target-element');
-            ScrollToNext(value);
-        }catch(e){
-            
-        }
-    })
-
-
-    function ScrollToNext(value){
-        try {
             window.scrollTo({
                 top: row[value].getBoundingClientRect().top,
                 left: 0,
                 behavior: "smooth"
             })
-            console.log(value + "" + row[value]);
         }catch(e){
             console.log(e);
         }
-    }
+    })
+
 
     toMeasure.forEach(el =>{
         let height = getLargestScrollCard();

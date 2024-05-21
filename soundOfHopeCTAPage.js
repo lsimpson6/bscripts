@@ -46,7 +46,7 @@
 
     window.addEventListener('load', ()=>{
         const inc = 5;
-        const start = 300000;
+        var start = 300000;
         const end = 400000;
 
         setInterval(()=>{

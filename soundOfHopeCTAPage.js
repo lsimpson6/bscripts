@@ -65,10 +65,14 @@
 
         switch (sc.getAttribute('data-direction')){
             case "right":
-                container.scrollLeft(500);
+                  $(container).animate({
+                    scrollLeft: '+=100'
+                  }, 300, 'swing');
                 break;
             case "left":
-                container.scrollLeft(0);
+                  $(container).animate({
+                    scrollLeft: '+=100'
+                  }, 300, 'swing');
                 break;
         }
 

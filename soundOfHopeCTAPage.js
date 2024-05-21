@@ -48,7 +48,7 @@
                 left: 0,
                 behavior: "smooth"
             })
-            console.log('clicked b');
+            console.log(value);
         }catch(e){
             console.log(e);
         }

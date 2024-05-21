@@ -23,12 +23,6 @@ window.addEventListener('scroll', ()=>{
         })
     })
 
-    toMeasure.forEach(el =>{
-        let height = getLargestScrollCard();
-        el.style = 'max-height: ' + height + 'px; min-height: ' + height + 'px;';
-    })
-
-
     const row = document.querySelectorAll('.bcs-widget-row');
 
     scrollNextButtons.forEach(r => r.addEventListener('click'), ()=>{
@@ -46,12 +40,18 @@ window.addEventListener('scroll', ()=>{
             window.scrollTo({
                 top: row[value].getBoundingClientRect().top,
                 left: 0,
-                behavior: "smooth",
+                behavior: "smooth"
             })
         }catch(e){
-            
+            console.log(e);
         }
     }
+
+    toMeasure.forEach(el =>{
+        let height = getLargestScrollCard();
+        el.style = 'max-height: ' + height + 'px; min-height: ' + height + 'px;';
+    })
+
 
     function getLargestScrollCard(){
         var init = 0;

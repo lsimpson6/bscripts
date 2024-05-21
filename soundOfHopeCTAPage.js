@@ -74,6 +74,11 @@
                     scrollLeft: '-=100'
                   }, 300, 'swing');
                 break;
+            case "right-super":
+                  $(container).animate({
+                    scrollLeft: '+=250'
+                  }, 300, 'swing');
+                break;
         }
 
     }))

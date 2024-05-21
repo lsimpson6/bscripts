@@ -45,7 +45,7 @@
     }
 
     window.addEventListener('load', ()=>{
-        const inc = ;
+        const inc = 50;
         var start = 0;
         const end = 400;
         var time = 10;

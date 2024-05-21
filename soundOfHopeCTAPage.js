@@ -56,8 +56,8 @@ window.addEventListener('scroll', ()=>{
     function getLargestScrollCard(){
         var init = 0;
         toMeasure.forEach(m => {
-            if(m > init){
-                init = m;
+            if(m.clientHeight > init){
+                init = m.clientHeight;
             }
         })
         return init;

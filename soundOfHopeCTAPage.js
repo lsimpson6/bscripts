@@ -71,7 +71,7 @@
                 break;
             case "left":
                   $(container).animate({
-                    scrollLeft: '+=100'
+                    scrollLeft: '-=100'
                   }, 300, 'swing');
                 break;
         }

@@ -57,3 +57,19 @@
             }
         }, time)
     })
+
+    const scrolls = document.querySelectorAll('.scroll-arrow');
+    scrolls.forEach(sc => sc.addEventListener('click', ()=>{
+
+        const container = document.querySelector('.cards-container');
+
+        switch (sc.getAttribute('direction')){
+            case "right":
+                container.scrollLeft(500);
+                break;
+            case "left":
+                container.scrollLeft(0);
+                break;
+        }
+
+    }))

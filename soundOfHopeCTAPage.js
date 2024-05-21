@@ -63,7 +63,7 @@
 
         const container = document.querySelector('.cards-container');
 
-        switch (sc.getAttribute('direction')){
+        switch (sc.getAttribute('data-direction')){
             case "right":
                 container.scrollLeft(500);
                 break;

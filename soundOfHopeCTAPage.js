@@ -76,7 +76,8 @@
     scrolls.forEach(sc => sc.addEventListener('click', ()=>{
 
         const container = document.querySelector('.cards-container');
-
+        const superW = document.querySelector('.cv').innerWidth;
+        
         switch (sc.getAttribute('data-direction')){
             case "right":
                   $(container).animate({
@@ -89,8 +90,9 @@
                   }, 300, 'swing');
                 break;
             case "right-super":
+                let t = '+=" + superW;
                   $(container).animate({
-                    scrollLeft: '+=250'
+                    scrollLeft: t
                   }, 300, 'swing');
                 break;
         }

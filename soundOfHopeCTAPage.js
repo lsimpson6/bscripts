@@ -45,20 +45,20 @@
     }
 
     window.addEventListener('load', ()=>{
-        const inc = 100000;
+        const inc = 5;
         var start = 0;
-        const end = 400000;
+        const end = 500;
         var timesRan = 0;
-        var time = 250;
+        var time = 80;
         setInterval(()=>{
-            if(start <= end){
+            if(start < end){
                 start = inc + start;
                 console.log(start);
-                document.getElementById('count-increase').textContent = start;
+                document.getElementById('count-increase').textContent = start + ',000 +';
             }
 
-            if(timesRan > 2){
-                time = 400;
+            if(timesRan > 48){
+                time = 160;
             }
             timesRan++;
         }, time)

@@ -1,6 +1,6 @@
 const toMeasure = document.querySelectorAll('.measure-on-scroll');
 const scrollNextButtons = document.querySelectorAll('.scroll-next');
-window.addEventListener('scroll', ()=>{
+    window.addEventListener('scroll', ()=>{
         const bg = document.querySelectorAll('.bg-highlight');
         const rounds = document.querySelectorAll('.round');
 
@@ -42,6 +42,7 @@ window.addEventListener('scroll', ()=>{
                 left: 0,
                 behavior: "smooth"
             })
+            console.log(value + "" + row[value]);
         }catch(e){
             console.log(e);
         }

@@ -47,7 +47,7 @@
             window.scrollTo({
                 top: element.getBoundingClientRect().top,
                 left: 0,
-                behavior: "smooth",
+                behavior: "smooth"
             })
             console.log(value);
         }catch(e){

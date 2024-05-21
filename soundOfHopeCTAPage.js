@@ -33,7 +33,7 @@ window.addEventListener('scroll', ()=>{
 
     scrollNextButtons.forEach(r => r.addEventListener('click'), ()=>{
         try {
-            let value = r.getAttribute('data-targetElement');
+            let value = r.getAttribute('data-target-element');
             ScrollToNext(value);
         }catch(e){
             

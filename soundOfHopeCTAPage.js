@@ -1,4 +1,6 @@
-    window.addEventListener('scroll', ()=>{
+const toMeasure = document.querySelectorAll('.measure-on-scroll');
+
+window.addEventListener('scroll', ()=>{
         const bg = document.querySelectorAll('.bg-highlight');
         const rounds = document.querySelectorAll('.round');
 
@@ -21,6 +23,12 @@
         })
     })
 
+    toMeasure.forEach(el =>{
+        let height = getLargestScrollCard();
+        el.style = 'max-height: ' + height + 'px; min-height: ' + height + 'px;';
+    })
+
+
     const row = document.querySelectorAll('.bcs-widget-row');
 
     row.forEach(r => r.addEventListener('click'), ()=>{
@@ -32,6 +40,7 @@
         }
     })
 
+
     function ScrollToNext(value){
         try {
             window.scrollTo({
@@ -42,6 +51,16 @@
         }catch(e){
             
         }
+    }
+
+    function getLargestScrollCard(){
+        var init = 0;
+        toMeasure.forEach(m => {
+            if(m > init){
+                init = m;
+            }
+        })
+        return init;
     }
 
     window.addEventListener('load', ()=>{

@@ -48,7 +48,7 @@
         const inc = 50;
         var start = 0;
         const end = 400;
-        var time = 10;
+        var time = 100;
         setInterval(()=>{
             if(start < end){
                 start = inc + start;

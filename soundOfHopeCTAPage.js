@@ -26,6 +26,7 @@ const scrollNextButtons = document.querySelectorAll('.scroll-next');
     const row = document.querySelectorAll('.bcs-widget-row');
 
     scrollNextButtons.forEach(r => r.addEventListener('click'), ()=>{
+        console.log('clicked a');
         try {
             let value = r.getAttribute('data-target-element');
             window.scrollTo({
@@ -33,6 +34,7 @@ const scrollNextButtons = document.querySelectorAll('.scroll-next');
                 left: 0,
                 behavior: "smooth"
             })
+            console.log('clicked b');
         }catch(e){
             console.log(e);
         }

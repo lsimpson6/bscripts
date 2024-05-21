@@ -14,7 +14,7 @@
 
     const toMeasure = document.querySelectorAll('.measure-on-scroll');
     const scrollNextButtons = document.querySelectorAll('.scroll-next');
-    
+
     window.addEventListener('scroll', ()=>{
         const bg = document.querySelectorAll('.bg-highlight');
         const rounds = document.querySelectorAll('.round');
@@ -43,8 +43,9 @@
         console.log('clicked a');
         try {
             let value = btn.getAttribute('data-target-element');
+            let element = document.getElementById(value);
             window.scrollTo({
-                top: row[value].getBoundingClientRect().top,
+                top: element.getBoundingClientRect().top,
                 left: 0,
                 behavior: "smooth",
             })

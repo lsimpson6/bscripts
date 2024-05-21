@@ -1,5 +1,5 @@
 const toMeasure = document.querySelectorAll('.measure-on-scroll');
-
+const scrollNextButtons = document.querySelectorAll('.scroll-next');
 window.addEventListener('scroll', ()=>{
         const bg = document.querySelectorAll('.bg-highlight');
         const rounds = document.querySelectorAll('.round');
@@ -31,7 +31,7 @@ window.addEventListener('scroll', ()=>{
 
     const row = document.querySelectorAll('.bcs-widget-row');
 
-    row.forEach(r => r.addEventListener('click'), ()=>{
+    scrollNextButtons.forEach(r => r.addEventListener('click'), ()=>{
         try {
             let value = r.getAttribute('data-targetElement');
             ScrollToNext(value);

@@ -90,7 +90,7 @@
                   }, 300, 'swing');
                 break;
             case "right-super":
-                let t = '+=" + superW;
+                let t = '+=' + superW;
                   $(container).animate({
                     scrollLeft: t
                   }, 300, 'swing');

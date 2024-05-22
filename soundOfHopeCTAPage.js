@@ -18,8 +18,14 @@
     window.addEventListener('scroll', ()=>{
         const bg = document.querySelectorAll('.bg-highlight');
         const rounds = document.querySelectorAll('.round');
+        var bannerX = -50;
+        var sy = window.scrollY;
+        const banner = document.getElementById('scrolling-banner');
 
-
+        if(banner.getBoundingClientRect().top <= 0 && banner.getBoundingClientRect().bottom >= window.innerheight){
+            banner.style = 'left:' + (bannerX + (sy/7)) + 'px';;
+        }
+        
         bg.forEach(e => {
             let t = e.getBoundingClientRect().top;
 

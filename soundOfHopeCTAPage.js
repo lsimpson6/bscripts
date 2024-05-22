@@ -1,16 +1,19 @@
     const toMeasure = document.querySelectorAll('.measure-on-scroll');
     const scrollNextButtons = document.querySelectorAll('.scroll-next');
-
+    var bannerX = -50;
     window.addEventListener('scroll', ()=>{
         const bg = document.querySelectorAll('.bg-highlight');
         const rounds = document.querySelectorAll('.round');
-        var bannerX = -50;
+        
         var sy = window.scrollY;
         const banner = document.getElementById('scrolling-banner');
 
         if(banner.getBoundingClientRect().top <= 0 && banner.getBoundingClientRect().bottom > 0){
-            banner.style = 'left:' + (bannerX + (sy/7)) + 'px';;
+            banner.style = 'left:' + (bannerX + (sy/7)) + 'px');
         }
+
+        console.log('t' + banner.getBoundingClientRect().top + ' ');
+        console.log('b' + banner.getBoundingClientRect().botom + ' ');
         
         bg.forEach(e => {
             let t = e.getBoundingClientRect().top;

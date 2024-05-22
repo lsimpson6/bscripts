@@ -49,7 +49,7 @@
         var starting = 375000;
         const incr = 125;
         var target = 400000;
-        const time = 5;
+        const time = 2.5;
         setInterval(()=>{
             if(starting < target){
                 starting += incr;

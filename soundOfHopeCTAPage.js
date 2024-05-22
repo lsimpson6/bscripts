@@ -47,14 +47,15 @@
 
     function countNumbers(){
         var starting = 375000;
-        const incr = 2;
+        const incr = 25;
         var target = 400000;
         const time = 1;
         setInterval(()=>{
             if(starting <= target){
                 starting += incr;
-                let a = starting.substring(0, 2);
-                let b = starting.substring(3, 5);
+                let tmp = starting.toString();
+                let a = tmp.indexOf(0, 2);
+                let b = tmp.substring(3, 5);
                 document.getElementById('numbers').textContent = a + ',' + b + '+';
             }
         }, time)

@@ -64,16 +64,15 @@
 
     const row = document.querySelectorAll('.bcs-widget-row');
     scrollNextButtons.forEach(btn => btn.addEventListener('click', ()=>{
-        console.log('clicked a');
+        const headerHeight = document.getElementById('header-and-navigation-2024').clientHeight;
         try {
             let value = btn.getAttribute('data-target-element');
             let element = document.getElementById(value);
             window.scrollTo({
-                top: element.getBoundingClientRect().top,
+                top: (element.getBoundingClientRect().top + headerHeight),
                 left: 0,
                 behavior: "smooth"
             })
-            console.log(value);
         }catch(e){
             console.log(e);
         }

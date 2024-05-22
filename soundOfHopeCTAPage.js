@@ -16,7 +16,7 @@
             let t = e.getBoundingClientRect().top;
 
             if(t <= window.innerHeight/1.5){
-                e.classList.add('fade-shown');
+                e.classList.replace('fade', 'fade-shown');
             }
         })
 

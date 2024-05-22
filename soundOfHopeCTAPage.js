@@ -47,7 +47,7 @@
 
     function countNumbers(){
         var starting = 375000;
-        const incr = 25;
+        const incr = 125;
         var target = 400000;
         const time = 1;
         setInterval(()=>{

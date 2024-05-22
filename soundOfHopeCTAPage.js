@@ -69,7 +69,7 @@
             let value = btn.getAttribute('data-target-element');
             let element = document.getElementById(value);
             window.scrollTo({
-                top: (element.getBoundingClientRect().top + headerHeight),
+                top: (element.getBoundingClientRect().top - headerHeight - 50),
                 left: 0,
                 behavior: "smooth"
             })

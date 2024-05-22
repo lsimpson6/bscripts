@@ -8,12 +8,9 @@
         var sy = window.scrollY;
         const banner = document.getElementById('scrolling-banner');
 
-        if(banner.getBoundingClientRect().top <= 0 && banner.getBoundingClientRect().bottom > 0){
-            banner.style = 'left:' + (bannerX + (sy/7)) + 'px';
+        if(banner.getBoundingClientRect().top <= -50){
+            banner.style = 'left:' + (bannerX - (sy/7)) + 'px;';
         }
-
-        console.log('t' + banner.getBoundingClientRect().top + ' ');
-        console.log('b' + banner.getBoundingClientRect().bottom + ' ');
         
         bg.forEach(e => {
             let t = e.getBoundingClientRect().top;

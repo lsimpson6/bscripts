@@ -1,17 +1,3 @@
-    window.addEventListener('load', ()=>{
-        const inc = 50;
-        var start = 0;
-        const end = 400;
-        var time = 100;
-        setInterval(()=>{
-            if(start < end){
-                start = inc + start;
-                console.log(start);
-                document.getElementById('count-increase').textContent = start + ',000 +';
-            }
-        }, time)
-    })
-
     const toMeasure = document.querySelectorAll('.measure-on-scroll');
     const scrollNextButtons = document.querySelectorAll('.scroll-next');
 
@@ -22,7 +8,7 @@
         var sy = window.scrollY;
         const banner = document.getElementById('scrolling-banner');
 
-        if(banner.getBoundingClientRect().top <= 0 && banner.getBoundingClientRect().bottom >= window.innerheight){
+        if(banner.getBoundingClientRect().top <= 0 && banner.getBoundingClientRect().bottom < window.innerheight){
             banner.style = 'left:' + (bannerX + (sy/7)) + 'px';;
         }
         

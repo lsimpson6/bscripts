@@ -104,13 +104,15 @@
         
         switch (sc.getAttribute('data-direction')){
             case "right":
+                let r = '+=' + superW;
                   $(container).animate({
-                    scrollLeft: '+=100'
+                    scrollLeft: r
                   }, 300, 'swing');
                 break;
             case "left":
+                    let l = '-=' + superW;
                   $(container).animate({
-                    scrollLeft: '-=100'
+                    scrollLeft: l
                   }, 300, 'swing');
                 break;
             case "right-super":

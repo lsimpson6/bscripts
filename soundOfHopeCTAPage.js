@@ -8,7 +8,7 @@
         var sy = window.scrollY;
         const banner = document.getElementById('scrolling-banner');
 
-        if(banner.getBoundingClientRect().top <= 0 && banner.getBoundingClientRect().bottom < window.innerheight){
+        if(banner.getBoundingClientRect().top <= 0 && banner.getBoundingClientRect().bottom > 0){
             banner.style = 'left:' + (bannerX + (sy/7)) + 'px';;
         }
         

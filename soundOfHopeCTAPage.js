@@ -1,16 +1,25 @@
     const toMeasure = document.querySelectorAll('.measure-on-scroll');
     const scrollNextButtons = document.querySelectorAll('.scroll-next');
+    const fade = document.querySelectorAll('.fade');
     var bannerX = -50;
+    window.addEventListener('load', ()=>{
+        fade.forEach(e => {
+            let t = e.getBoundingClientRect().top;
+            if(t <= window.innerHeight){
+                e.classList.replace('fade', 'fade-shown');
+            }
+        })
+    })
+    
     window.addEventListener('scroll', ()=>{
-        const fade = document.querySelectorAll('.fade');
         const rounds = document.querySelectorAll('.round');
         
         var sy = window.scrollY;
         const banner = document.getElementById('scrolling-banner');
 
-        if(banner.getBoundingClientRect().top >= -50){
-            banner.style = 'left:' + (bannerX - (sy/7)) + 'px;';
-        }
+       // if(banner.getBoundingClientRect().top >= -50){
+        //    banner.style = 'left:' + (bannerX - (sy/7)) + 'px;';
+       // }
         
         fade.forEach(e => {
             let t = e.getBoundingClientRect().top;

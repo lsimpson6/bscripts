@@ -2,7 +2,7 @@
     const scrollNextButtons = document.querySelectorAll('.scroll-next');
     var bannerX = -50;
     window.addEventListener('scroll', ()=>{
-        const bg = document.querySelectorAll('.bg-highlight');
+        const fade = document.querySelectorAll('.fade');
         const rounds = document.querySelectorAll('.round');
         
         var sy = window.scrollY;
@@ -12,11 +12,11 @@
             banner.style = 'left:' + (bannerX - (sy/7)) + 'px;';
         }
         
-        bg.forEach(e => {
+        fade.forEach(e => {
             let t = e.getBoundingClientRect().top;
 
             if(t <= window.innerHeight/1.5){
-                e.classList.add('bgSlide');
+                e.classList.add('fade-shown');
             }
         })
 

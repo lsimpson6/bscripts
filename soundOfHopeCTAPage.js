@@ -13,7 +13,7 @@
         }
 
         console.log('t' + banner.getBoundingClientRect().top + ' ');
-        console.log('b' + banner.getBoundingClientRect().botom + ' ');
+        console.log('b' + banner.getBoundingClientRect().bottom + ' ');
         
         bg.forEach(e => {
             let t = e.getBoundingClientRect().top;

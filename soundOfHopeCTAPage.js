@@ -83,6 +83,12 @@
     toMeasure.forEach(el =>{
         let height = getLargestScrollCard();
         el.style = 'max-height: ' + height + 'px; min-height: ' + height + 'px;';
+
+        let w = toMeasure[1].clientWidth;
+        let h = toMeasure[1].clientHeight;
+
+        document.querySelector('.card.first').style = 'max-height: ' + h + 'px;' + 'min-height: ' + h + 'px;' + 'max-width: ' + w + 'px;' + 'mxin-width: ' + w + 'px;'
+
     })
 
     function getLargestScrollCard(){

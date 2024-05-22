@@ -54,9 +54,10 @@
             if(starting <= target){
                 starting += incr;
                 let tmp = starting.toString();
-                let a = tmp.indexOf(0, 2);
-                let b = tmp.substring(3, 5);
-                document.getElementById('numbers').textContent = a + ',' + b + '+';
+                let a = tmp.substring(0, 3);
+                let b = tmp.substring(3, 6);
+                let str = a + ',' + b + '+';
+                document.getElementById('number').textContent = str;
             }
         }, time)
     }

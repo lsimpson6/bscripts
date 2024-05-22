@@ -37,7 +37,28 @@
                 e.classList.add('shown');
             }
         })
+
+        if(document.getElementById('number').getAttribute('scrolled') != "true"){
+            countNumbers();
+            document.getElementById('number').setAttribute('scrolled', "true");
+        }
+
     })
+
+    function countNumbers(){
+        var starting = 375000;
+        const incr = 2;
+        var target = 400000;
+        const time = 1;
+        setInterval(()=>{
+            if(starting <= target){
+                starting += incr;
+                let a = starting.substring(0, 2);
+                let b = starting.substring(3, 5);
+                document.getElementById('numbers').textContent = a + ',' + b + '+';
+            }
+        }, time)
+    }
 
     const row = document.querySelectorAll('.bcs-widget-row');
     scrollNextButtons.forEach(btn => btn.addEventListener('click', ()=>{

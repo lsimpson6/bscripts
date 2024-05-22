@@ -49,9 +49,9 @@
         var starting = 375000;
         const incr = 125;
         var target = 400000;
-        const time = 1;
+        const time = 5;
         setInterval(()=>{
-            if(starting <= target){
+            if(starting < target){
                 starting += incr;
                 let tmp = starting.toString();
                 let a = tmp.substring(0, 3);

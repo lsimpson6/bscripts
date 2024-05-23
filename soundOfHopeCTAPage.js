@@ -81,6 +81,15 @@
         }
     }))
 
+    document.getElementById('volunteer').addEventListener('click', ()=>{
+        window.scrollTo({
+            top: (document.querySelector('.widget-location-volunteer-listing').getBoundingClientRect().top - headerHeight - 50),
+            left: 0,
+            behavior: "smooth"
+        })
+        document.querySelector('.widget-location-volunteer-listing').style = 'display: flex !important;';
+    })
+
 
 
     toMeasure.forEach(el =>{

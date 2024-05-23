@@ -17,6 +17,13 @@
         var sy = window.scrollY;
         const banner = document.getElementById('scrolling-banner');
 
+
+        if(sy > (window.innerHeight + window.innerHeight/3)){
+            document.getElementById('t1').style="opacity: 0 !important;";
+        }else {
+            document.getElementById('t1').style="";
+        }
+
        // if(banner.getBoundingClientRect().top >= -50){
         //    banner.style = 'left:' + (bannerX - (sy/7)) + 'px;';
        // }

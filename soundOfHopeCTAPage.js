@@ -82,6 +82,7 @@
     }))
 
     document.getElementById('volunteer').addEventListener('click', ()=>{
+        let headerHeight = document.getElementById('header-and-navigation-2024').clientHeight;
         window.scrollTo({
             top: (document.querySelector('.widget-location-volunteer-listing').getBoundingClientRect().top - headerHeight - 50),
             left: 0,

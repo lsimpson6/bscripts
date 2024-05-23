@@ -20,7 +20,7 @@
         widgetsToAnimate.forEach(w => {
             let widget = document.querySelectorAll(w);
             widget.forEach(el =>{
-                if(el.getAttribute('data-isset') == 'true'){
+                if(el.getAttribute('data-isset') != 'true'){
                     el.setAttribute('data-isset', 'true');
                     el.classList.add('fade-custom');
                 }

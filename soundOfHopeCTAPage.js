@@ -24,7 +24,7 @@
             widget.forEach(el =>{
                 if(el.getAttribute('data-set') != "true"){
                     el.classList.add('fade');
-                    el.getAttribute('data-set', "true");
+                    el.setAttribute('data-set', "true");
                 }
             })
         })

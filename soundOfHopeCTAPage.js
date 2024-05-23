@@ -82,13 +82,13 @@
     }))
 
     document.getElementById('volunteer').addEventListener('click', ()=>{
+        document.querySelector('.widget-location-volunteer-listing').style = 'display: flex !important;';
+
         const y = document.querySelector('.widget-location-volunteer-listing').getBoundingClientRect().top + window.scrollY;
         window.scrollTo({
           top: y,
           behavior: 'smooth'
         });
-        
-        document.querySelector('.widget-location-volunteer-listing').style = 'display: flex !important;';
     })
 
 

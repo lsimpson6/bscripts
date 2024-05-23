@@ -2,6 +2,8 @@
     const scrollNextButtons = document.querySelectorAll('.scroll-next');
     const fade = document.querySelectorAll('.fade-custom');
     var bannerX = -50;
+    var widgetsToAnimate = ['.inner-bcs-text.text-lg', '#w7 .card', '#contact p'];
+
     window.addEventListener('load', ()=>{
         fade.forEach(e => {
             let t = e.getBoundingClientRect().top;
@@ -9,15 +11,6 @@
                 e.classList.replace('fade-custom', 'fade-shown');
             }
         })
-    })
-    var widgetsToAnimate = ['.inner-bcs-text.text-lg', '#w7 .card', '#contact p'];
-
-    window.addEventListener('scroll', ()=>{
-        const rounds = document.querySelectorAll('.round');
-        // disable mobile menu hide on scroll
-        document.getElementById('mobile-header-and-navigation-2024').style = '';
-        var sy = window.scrollY;
-        const banner = document.getElementById('scrolling-banner');
 
         widgetsToAnimate.forEach(w => {
             let widget = document.querySelectorAll(w);
@@ -28,6 +21,13 @@
                 }
             })
         })
+    })
+    window.addEventListener('scroll', ()=>{
+        const rounds = document.querySelectorAll('.round');
+        // disable mobile menu hide on scroll
+        document.getElementById('mobile-header-and-navigation-2024').style = '';
+        var sy = window.scrollY;
+        const banner = document.getElementById('scrolling-banner');
 
         if(sy > (window.innerHeight + window.innerHeight/3)){
             document.getElementById('t1').style="opacity: 0 !important;";

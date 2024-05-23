@@ -5,13 +5,7 @@
     var widgetsToAnimate = ['.inner-bcs-text.text-lg', '#w7 .card', '#contact p'];
 
     window.addEventListener('load', ()=>{
-        widgetsToAnimate.forEach(w => {
-            let widget = document.querySelectorAll(w);
-            widget.forEach(el =>{
-                el.classList.add('fade-custom');
-            })
-        })
-        
+
         fade.forEach(e => {
             let t = e.getBoundingClientRect().top;
             if(t <= window.innerHeight){
@@ -22,6 +16,16 @@
 
     window.addEventListener('scroll', ()=>{
         var sy = window.scrollY;
+
+        widgetsToAnimate.forEach(w => {
+            let widget = document.querySelectorAll(w);
+            widget.forEach(el =>{
+                if(!el.classList.contains('fade-custom')){
+                    el.classList.add('fade-custom');
+                    console.log('added');
+                }
+            })
+        })
 
         if(sy > (window.innerHeight + window.innerHeight/3)){
             document.getElementById('t1').style="opacity: 0 !important; z-index: -999;";

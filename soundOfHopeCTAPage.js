@@ -1,6 +1,6 @@
     const toMeasure = document.querySelectorAll('.measure-on-scroll');
     const scrollNextButtons = document.querySelectorAll('.scroll-next');
-
+    var fade = document.querySelectorAll('.fade-custom');
     var bannerX = -50;
     var widgetsToAnimate = ['.inner-bcs-text.text-lg', '#w7 .card', '#contact p'];
 
@@ -33,8 +33,7 @@
             document.getElementById('t1').style="";
         }
 
-        var fade = document.querySelectorAll('.fade-custom');
-        fade.forEach(e => {
+        document.querySelectorAll('.fade-custom').forEach(e => {
             let t = e.getBoundingClientRect().top;
 
             if(t <= window.innerHeight/1.5){

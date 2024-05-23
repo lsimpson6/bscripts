@@ -20,9 +20,9 @@
         widgetsToAnimate.forEach(w => {
             let widget = document.querySelectorAll(w);
             widget.forEach(el =>{
-                if(!el.classList.contains('fade-custom')){
+                if(el.getAttribute('data-isset') == 'true'){
+                    el.setAttribute('data-isset', 'true');
                     el.classList.add('fade-custom');
-                    console.log('added');
                 }
             })
         })
@@ -32,7 +32,7 @@
         }else {
             document.getElementById('t1').style="";
         }
-        
+
         var fade = document.querySelectorAll('.fade-custom');
         fade.forEach(e => {
             let t = e.getBoundingClientRect().top;

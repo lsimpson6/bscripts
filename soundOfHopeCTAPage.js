@@ -1,12 +1,12 @@
     const toMeasure = document.querySelectorAll('.measure-on-scroll');
     const scrollNextButtons = document.querySelectorAll('.scroll-next');
-    const fade = document.querySelectorAll('.fade');
+    const fade = document.querySelectorAll('.fade-custom');
     var bannerX = -50;
     window.addEventListener('load', ()=>{
         fade.forEach(e => {
             let t = e.getBoundingClientRect().top;
             if(t <= window.innerHeight){
-                e.classList.replace('fade', 'fade-shown');
+                e.classList.replace('fade-custom', 'fade-shown');
             }
         })
     })
@@ -23,7 +23,7 @@
             let widget = document.querySelectorAll(w);
             widget.forEach(el =>{
                 if(el.getAttribute('data-set') != "true"){
-                    el.classList.add('fade');
+                    el.classList.add('fade-custom');
                     el.setAttribute('data-set', "true");
                 }
             })
@@ -43,7 +43,7 @@
             let t = e.getBoundingClientRect().top;
 
             if(t <= window.innerHeight/1.5){
-                e.classList.replace('fade', 'fade-shown');
+                e.classList.replace('fade-custom', 'fade-shown');
             }
         })
 

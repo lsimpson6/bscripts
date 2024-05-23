@@ -10,7 +10,8 @@
             }
         })
     })
-    
+    var widgetsToAnimate = ['.inner-bcs-text.text-lg', '#w7 .card', '#contact p'];
+
     window.addEventListener('scroll', ()=>{
         const rounds = document.querySelectorAll('.round');
         // disable mobile menu hide on scroll
@@ -18,6 +19,15 @@
         var sy = window.scrollY;
         const banner = document.getElementById('scrolling-banner');
 
+        widgetsToAnimate.forEach(w => {
+            let widget = document.querySelectorAll(w);
+            widget.forEach(el =>{
+                if(el.getAttribute('data-set') != "true"){
+                    el.classList.add('fade');
+                    el.getAttribute('data-set', "true");
+                }
+            })
+        })
 
         if(sy > (window.innerHeight + window.innerHeight/3)){
             document.getElementById('t1').style="opacity: 0 !important;";

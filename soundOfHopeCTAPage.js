@@ -6,6 +6,9 @@
 
     window.addEventListener('load', ()=>{
 
+        if(window.location.href.includes('postalCode')){
+            volunteer();
+        }
         fade.forEach(e => {
             let t = e.getBoundingClientRect().top;
             if(t <= window.innerHeight){
@@ -82,6 +85,10 @@
     }))
 
     document.getElementById('volunteer').addEventListener('click', ()=>{
+        volunteer();
+    })
+
+    function volunteer(){
         document.querySelector('.widget-location-volunteer-listing').style = 'display: flex !important;';
 
         const y = document.querySelector('.widget-location-volunteer-listing').getBoundingClientRect().top + window.scrollY;
@@ -89,8 +96,7 @@
           top: y,
           behavior: 'smooth'
         });
-    })
-
+    }
 
 
     toMeasure.forEach(el =>{

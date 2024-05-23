@@ -5,54 +5,35 @@
     var widgetsToAnimate = ['.inner-bcs-text.text-lg', '#w7 .card', '#contact p'];
 
     window.addEventListener('load', ()=>{
+        widgetsToAnimate.forEach(w => {
+            let widget = document.querySelectorAll(w);
+            widget.forEach(el =>{
+                el.classList.add('fade-custom');
+            })
+        })
+        
         fade.forEach(e => {
             let t = e.getBoundingClientRect().top;
             if(t <= window.innerHeight){
                 e.classList.replace('fade-custom', 'fade-shown');
             }
         })
-
-        widgetsToAnimate.forEach(w => {
-            let widget = document.querySelectorAll(w);
-            widget.forEach(el =>{
-                if(el.getAttribute('data-set') != "true"){
-                    el.classList.add('fade-custom');
-                    el.setAttribute('data-set', "true");
-                }
-            })
-        })
     })
+
     window.addEventListener('scroll', ()=>{
-        const rounds = document.querySelectorAll('.round');
-        // disable mobile menu hide on scroll
-        document.getElementById('mobile-header-and-navigation-2024').style = '';
         var sy = window.scrollY;
-        const banner = document.getElementById('scrolling-banner');
 
         if(sy > (window.innerHeight + window.innerHeight/3)){
-            document.getElementById('t1').style="opacity: 0 !important;";
+            document.getElementById('t1').style="opacity: 0 !important; z-index: -999;";
         }else {
             document.getElementById('t1').style="";
         }
-
-       // if(banner.getBoundingClientRect().top >= -50){
-        //    banner.style = 'left:' + (bannerX - (sy/7)) + 'px;';
-       // }
         
         fade.forEach(e => {
             let t = e.getBoundingClientRect().top;
 
             if(t <= window.innerHeight/1.5){
                 e.classList.replace('fade-custom', 'fade-shown');
-            }
-        })
-
-        
-        rounds.forEach(e => {
-            let t = e.getBoundingClientRect().top;
-
-            if(t <= window.innerHeight/1.5){
-                e.classList.add('shown');
             }
         })
 

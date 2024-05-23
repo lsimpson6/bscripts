@@ -13,7 +13,8 @@
     
     window.addEventListener('scroll', ()=>{
         const rounds = document.querySelectorAll('.round');
-        
+        // disable mobile menu hide on scroll
+        document.getElementById('mobile-header-and-navigation-2024').style = '';
         var sy = window.scrollY;
         const banner = document.getElementById('scrolling-banner');
 

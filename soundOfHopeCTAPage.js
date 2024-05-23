@@ -71,7 +71,7 @@
         try {
             let value = btn.getAttribute('data-target-element');
             let element = document.getElementById(value);
-            window.scroll({
+            window.scrollTo({
                 top: (element.getBoundingClientRect().top - headerHeight - 50),
                 left: 0,
                 behavior: "smooth"
@@ -83,7 +83,7 @@
 
     document.getElementById('volunteer').addEventListener('click', ()=>{
         const y = document.querySelector('.widget-location-volunteer-listing').getBoundingClientRect().top + window.scrollY;
-        window.scroll({
+        window.scrollTo({
           top: y,
           behavior: 'smooth'
         });

@@ -107,10 +107,12 @@
 
     function jsScrollToPageElement(x){
         try {
-            const headerHeight = document.getElementById('header-and-navigation-2024').clientHeight;
+            let headerHeight = document.getElementById('header-and-navigation-2024').clientHeight;
             let element = document.querySelector(x);
+            let t = element.getBoundingClientRect().top - headerHeight - 50;
+            console.log(t);
             window.scrollTo({
-                top: (element.getBoundingClientRect().top - headerHeight - 50),
+                top: t,
                 left: 0,
                 behavior: "smooth"
             })

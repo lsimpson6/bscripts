@@ -109,7 +109,7 @@
         try {
             let headerHeight = document.getElementById('header-and-navigation-2024').clientHeight;
             let element = document.querySelector(x);
-            let t = element.getBoundingClientRect().top - headerHeight - 50;
+            let t = element.getBoundingClientRect().top - headerHeight - 50 + window.scrollY;
             console.log(t);
             window.scrollTo({
                 top: t,

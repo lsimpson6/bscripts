@@ -95,9 +95,9 @@
         const container = document.getElementById('volunteer-form');
         const url = '/step-up/volunteer?postalCode=';
         let postalCodeUrl = url + value;
-        go.setAttribute('href', h + postalCodeUrl);
+        go.setAttribute('href', postalCodeUrl);
 
-        if(value.length == 5){
+        if(value.toString().length == 5){
             container.setAttribute('data-valid', "true");
         }else {
             container.setAttribute('data-valid', "false");

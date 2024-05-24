@@ -90,27 +90,11 @@
         }catch(e){}
     }
 
-    //scrollNextButtons.forEach(btn => btn.addEventListener('click', ()=>{
-      ///  try {
-         //   const headerHeight = document.getElementById('header-and-navigation-2024').clientHeight;
-           // let value = btn.getAttribute('data-target-element');
-            //let element = document.getElementById(value);
-           // window.scrollTo({
-           //     top: (element.getBoundingClientRect().top - headerHeight - 50),
-           //     left: 0,
-            //    behavior: "smooth"
-            //})
-        //}catch(e){
-         //   console.log(e);
-        //}
-    //}))
-
     function jsScrollToPageElement(x){
         try {
             let headerHeight = document.getElementById('header-and-navigation-2024').clientHeight;
             let element = document.querySelector(x);
             let t = element.getBoundingClientRect().top - headerHeight - 50 + window.scrollY;
-            console.log(t);
             window.scrollTo({
                 top: t,
                 left: 0,

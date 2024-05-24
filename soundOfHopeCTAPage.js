@@ -81,13 +81,13 @@
         }
     }))
 
-    document.getElementById('volunteer').addEventListener('click', ()=>{
-        volunteer();
-    })
 
     document.querySelector('.postalcode-input').addEventListener('input', (e)=>{
+        try {
+            volunteer(e.target.value);
+        }catch(e){
+        }
 
-        volunteer(e.target.value);
     })
 
     function volunteer(value){

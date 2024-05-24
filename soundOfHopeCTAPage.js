@@ -6,9 +6,6 @@
 
     window.addEventListener('load', ()=>{
 
-        if(window.location.href.includes('postalCode')){
-            volunteer();
-        }
         fade.forEach(e => {
             let t = e.getBoundingClientRect().top;
             if(t <= window.innerHeight){
@@ -88,14 +85,23 @@
         volunteer();
     })
 
-    function volunteer(){
-        document.querySelector('.widget-location-volunteer-listing').style = 'display: flex !important;';
+    document.querySelector('.postalcode-input').addEventListener('input', (e)=>{
 
-        const y = document.querySelector('.widget-location-volunteer-listing').getBoundingClientRect().top + window.scrollY;
-        window.scrollTo({
-          top: y,
-          behavior: 'smooth'
-        });
+        volunteer(e.target.value);
+    })
+
+    function volunteer(value){
+        const go = document.getElementById('volunteer-go-btn');
+        const container = document.getElementById('volunteer-form');
+        const url = '/step-up/volunteer?postalCode=';
+        let postalCodeUrl = url + value;
+        go.setAttribute('href', h + postalCodeUrl);
+
+        if(value.length == 5){
+            container.setAttribute('data-valid', "true");
+        }else {
+            container.setAttribute('data-valid', "false");
+        }
     }
 
 

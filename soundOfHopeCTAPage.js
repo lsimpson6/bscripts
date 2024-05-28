@@ -130,6 +130,20 @@
         }catch(e){}
     }
 
+    function slideBackgroundIn() {
+        try{
+            document.querySelectorAll('.highlight-blue.swipe').forEach(e => {
+                let t = e.getBoundingClientRect().top;
+    
+                if(t <= window.innerHeight/1.5){
+                    e.classList.replace('swipe', 'swiped');
+                }
+            })
+        }
+        catch(e){
+
+        }
+    }
 
     toMeasure.forEach(el =>{
         try{

@@ -21,6 +21,7 @@
         animateStaticElements();
         hideFirstElementAfterScroll();
         fadeAnimation();
+        slideBackgroundIn();
         if(document.getElementById('number').getAttribute('scrolled') != "true" && document.getElementById('number').getBoundingClientRect().top <= window.innerHeight/1.5){
             countNumbers();
         }

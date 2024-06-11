@@ -61,7 +61,7 @@ window.addEventListener('scroll', ()=>{
 
 
     try {
-        if(document.querySelector('#home .annual-report-title').getBoundingClientRect().top <= 200){
+        if(document.querySelector('#home .annual-report-title').getBoundingClientRect().top <= 200 && window.innerWidth > 1000){
             document.querySelector('.year').style = `transition: .7s ease all; font-size: calc(100vw / 7); line-height: calc(100vw / ${25});`
     
         }else {

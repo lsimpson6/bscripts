@@ -1,4 +1,4 @@
-
+const header = document.querySelector('#custom-header');
 var sUp = true;
 console.log('ran');
 let words = [];
@@ -9,6 +9,7 @@ window.addEventListener('load', ()=>{
 //Colors();
 //FixedImages();
 InsertStateCards();
+
 
 document.getElementById('year-container').style = `min-height: ${document.querySelector('#year-container').clientHeight}px`;
 
@@ -26,11 +27,18 @@ complete += '<span class="animate" data-animate="fade-up-opacity">' + word + '</
 })
 
 console.log(complete);
+
+
+})
+
+window.addEventListener('DOMContentLoaded', ()=>{
+    LargestOurWorkRow();
+    console.log('ran');
 })
 
 var scrolled = 0;
 window.addEventListener('scroll', ()=>{
-    const header = document.querySelector('#custom-header');
+    
 
     try{
         document.getElementById('navigation').setAttribute('menu-status', "open");
@@ -45,8 +53,7 @@ window.addEventListener('scroll', ()=>{
         }
     }catch(e){}
 
-
-    centerTitleChange();
+    try{centerTitleChange();}catch(e){}
     try{yearInReview();}catch(e){}
     try{PageProgress();}catch(e){ }
     try{globalScrollSum();}catch(e){}
@@ -56,6 +63,7 @@ window.addEventListener('scroll', ()=>{
     //srollSum();
     try{refugeeImmigrantNumber();}catch(e){}
     try{workInWoorldNumber();}catch(e){}
+    try{ourWorkImagesAnimation();}catch(e){}
 
     let tmp = window.scrollY;
 
@@ -79,22 +87,22 @@ window.addEventListener('scroll', ()=>{
     scrolled = window.scrollY;
 })
 
+let before = 0;
+let colorI = 0;
 function Colors(){
-const rows = document.querySelectorAll('.bcs-widget-row');
-const body = document.querySelector('#main');
+    const rows = document.querySelectorAll('.bcs-widget-row');
+    let a = '', b = '';
+    rows.forEach(row => {
+        let top = row.getBoundingClientRect().top;
+        if(top <= window.innerHeight / 2 ) {
+            a = row.getAttribute('data-bg-before');
+            b = row.getAttribute('data-bg')
+        }
+        row.classList.replace(a, b);
 
-rows.forEach(row => {
-let top = row.getBoundingClientRect().top;
-if(top <= window.innerHeight) {
-body.setAttribute('data-color', row.getAttribute('data-bg'));
+    })
 }
-})
-
-if(window.scrollY <= 10){
-body.setAttribute('data-color', 'init');
-
-}
-}
+5
 
 var i = 0;
 function yearInReview(){
@@ -135,6 +143,19 @@ function yearInReview(){
     }
 }
 
+function LargestOurWorkRow(){
+    const ourWork = document.querySelectorAll('.ourwork-row .inner-bcs-row');
+    let x = 0;
+    ourWork.forEach(el =>{
+        if(el.clientHeight > x){
+            x = el.clientHeight;
+        }
+    })
+
+    ourWork.forEach(el => {
+        el.style = `min-height: ${x}px;`;
+    })
+}
 
 function animateElements(){
     const elements = document.querySelectorAll('.animate');
@@ -289,46 +310,69 @@ function InsertStateCards(isClicked){
                 </div>
             </div>`;
             cardContainerTop.insertAdjacentHTML('beforeend', cardCode);
-            cardContainerBottom.insertAdjacentHTML('afterbegin', cardCode);
+            //cardContainerBottom.insertAdjacentHTML('afterbegin', cardCode);
             prevRandom = rand;
         }
         InsertStateCardsIsRan = true;
     }
 }
 
+function ShowAllCards(){
+    const cards = document.querySelectorAll('.impact-at-home-card.d-none');
+
+    cards.forEach(card =>{
+        card.classList.add(card.getAttribute('data-animate'));
+        card.classList.replace('d-none', 'd-flex');
+    })
+
+    document.querySelector('#impact-at-home-cards-list-show-all').style = 'display: none;';
+}
+
 function CardToList(){
     const cardContainerTop = document.getElementById('impact-at-home-cards-top');
+    const worldContainer = document.getElementById('impact-around-world-cards');
     const cardContainerBottom = document.getElementById('impact-at-home-cards-bottom');
     const list = document.getElementById('impact-at-home-cards-list');
     cardContainerTop.innerHTML = '';
     list.style = '';
 
-    let initCode = `
-    <div class="d-flex flex-row" style="width: 100%;">
-        <div class="d-flex flex-wrap mr-3 fade-up-translate" data-animate="fade-up-translate">
-            <div class="marker cs-darkcoral mr-3"></div>
-            <p class="my-auto mr-3">People Served</p>
-        </div>
-        <div class="d-flex flex-wrap mr-3 fade-up-translate" data-animate="fade-up-translate">
-            <div class="marker cs-blue mr-3"></div>
-            <p class="my-auto mr-3">Total Programs</p>
-        </div>
-        <div class="d-flex flex-wrap mr-3 fade-up-translate" data-animate="fade-up-translate">
-            <div class="marker cs-lightgray mr-3"></div>
-            <p class="my-auto mr-3">Total Locations</p>
-        </div>
-        <div class="d-flex flex-wrap mr-3 fade-up-translate" data-animate="fade-up-translate">
-            <div class="marker cs-green mr-3"></div>
-            <p class="my-auto mr-3">Program Expenditures</p>
-        </div>
-    </div>
-    `;
+    for(let g in globalObj){
+
+        
+    let countries = `
+        <div class="d-flex impact-at-home-card flex-column animate mt-5 mr-3" data-animate="fade-up-translate" style="width: 40%;">
+            <h5>${globalObj[g].title}</h5>
+            <div class="d-flex flex-column my-1">
+                <div class="d-flex flex-row ">
+                    <div class="marker cs-darkcoral mr-3"></div>
+                    <p class="my-auto mr-3"><strong>${globalObj[g].title == 'United States' ? globalObj[g].served.servedSum.toLocaleString() : globalObj[g].served.toLocaleString()}</strong> served</p>
+                </div>
+                <div class="d-flex flex-row">
+                    <div class="marker cs-blue mr-3"></div>
+                    <p class="my-auto mr-3"><strong>${globalObj[g].title == 'United States' ? globalObj[g].programs.programSum : globalObj[g].programs}</strong> programs</p>
+                </div>
+                <div class="d-flex flex-row">
+                    <div class="marker cs-lightgray mr-3"></div>
+                    <p class="my-auto mr-3"><strong>${globalObj[g].title == 'United States' ? globalObj[g].locations.locationsSum : globalObj[g].locations}</strong> locations</p>
+                </div>
+            </div>
+            <div class="d-flex flex-row  my-1">
+                <div class="marker cs-green mr-3 mt-2"></div>
+                <p class="my-auto mr-3"><strong>$${globalObj[g].title == 'United States' ? globalObj[g].expenditures.expendituresSum.toLocaleString() : globalObj[g].expenditures.toLocaleString()}</strong> <br/> in expenditures</p>
+            </div>
+        </div>`;
+
+        worldContainer.insertAdjacentHTML('beforeend', countries);
+    }
 
 
     //list.insertAdjacentHTML('beforeend', initCode);
+    let counter = 0;
     for(let i in states){
+
+        let dipslay = i > 3 ? 'd-none' : 'd-flex animate';
         let code = `
-        <div class="d-flex impact-at-home-card flex-column mt-5 mr-3 animate" data-animate="fade-up-translate" >
+        <div class="${dipslay} impact-at-home-card flex-column mt-5 mr-3" data-animate="fade-up-translate" >
             <h5>${states[i].title}</h5>
             <div class="d-flex flex-column my-1">
                 <div class="d-flex flex-row ">
@@ -346,7 +390,7 @@ function CardToList(){
             </div>
             <div class="d-flex flex-row  my-1">
                 <div class="marker cs-green mr-3 mt-2"></div>
-                <p class="my-auto mr-3"><strong>$${states[i].expenditures}</strong> <br/> in expenditures</p>
+                <p class="my-auto mr-3"><strong>$${states[i].expenditures.toLocaleString()}</strong> <br/> in expenditures</p>
             </div>
         </div>`;
         list.insertAdjacentHTML('beforeend', code);
@@ -604,8 +648,8 @@ accordianTitles.forEach(title => title.addEventListener('click', ()=>{
 
     const copy = document.querySelectorAll('#accordian-container .copy');
     let scrollTo = '#' + target;
-    jsScrollToPageElement(scrollTo);
     accordian(target, title);
+    jsScrollToPageElement(scrollTo);
 
 }))
 
@@ -645,4 +689,28 @@ function centerTitleChange(){
         p.style = `transform: translateY(-${centerStartingTranslate}px); margin-bottom: 0px; transition: .3s ease all;`;
     })
 
+}
+
+
+var tStyle = [0,0,0];
+function ourWorkImagesAnimation(){
+    const images = document.querySelectorAll('.ourwork-row .image img');
+
+    for(var i = 0; i < images.length; i++){
+        let image = images[i];
+        if(image.getBoundingClientRect().top > 0 && image.getBoundingClientRect().bottom < window.innerHeight){
+            
+            if(sUp){
+                if(tStyle[i] <= 15){
+                    tStyle[i] = (tStyle[i] += .5);
+
+                }
+            }else{
+                if(tStyle[i] >= -15){
+                    tStyle[i] = (tStyle[i] -= .5);
+                }
+            }
+            image.style = `top: ${tStyle[i]}%;`;
+        }
+    }
 }

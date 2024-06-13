@@ -6,7 +6,7 @@ const str = 'fifty six thousand seven hundred sixty two ';
 let newStr = '';
 let complete = '';
 window.addEventListener('load', ()=>{
-//Colors();
+
 //FixedImages();
 InsertStateCards();
 
@@ -64,7 +64,7 @@ window.addEventListener('scroll', ()=>{
     try{refugeeImmigrantNumber();}catch(e){}
     try{workInWoorldNumber();}catch(e){}
     try{ourWorkImagesAnimation();}catch(e){}
-
+    
     let tmp = window.scrollY;
 
 
@@ -91,18 +91,36 @@ let before = 0;
 let colorI = 0;
 function Colors(){
     const rows = document.querySelectorAll('.bcs-widget-row');
+    const colorTargets = document.querySelectorAll('.color-targets');
     let a = '', b = '';
-    rows.forEach(row => {
-        let top = row.getBoundingClientRect().top;
-        if(top <= window.innerHeight / 2 ) {
-            a = row.getAttribute('data-bg-before');
-            b = row.getAttribute('data-bg')
-        }
-        row.classList.replace(a, b);
 
+    colorTargets.forEach(target => {
+        if(target.getBoundingClientRect().top < window.innerHeight / 2 && target.getBoundingClientRect().top >= 0){
+            a = target.getAttribute('a');
+            b = target.getAttribute('b');
+        }
+    })
+
+    if(window.scrollY > rows[1].clientHeight + rows[0].clientHeight + rows[2].clientHeight + rows[3].clientHeight){
+        a = 'cs-white';
+        b = 'cs-white';
+    }else if(window.scrollY > rows[1].clientHeight + rows[0].clientHeight + rows[2].clientHeight){
+        a = 'cs-violet';
+        b = 'cs-white';
+    }else if(window.scrollY > rows[1].clientHeight + rows[0].clientHeight){
+        a = 'cs-darkviolet';
+        b = 'cs-violet';
+    }else if(window.scrollY > rows[0].clientHeight){
+        a = 'cs-white';
+        b = 'cs-darkviolet';
+    }
+
+
+    rows.forEach(row => {
+        row.classList.replace(a,b);
     })
 }
-5
+
 
 var i = 0;
 function yearInReview(){
@@ -184,17 +202,18 @@ function FixedImages(){
 }
 
 document.querySelectorAll('.direction-arrows button').forEach(button => button.addEventListener('click', ()=>{
-    ScrollCards(button.getAttribute('data-direction'));
+    ScrollCards(button.getAttribute('data-direction'), button.getAttribute('data-cards-target'));
 }))
 
 var offsetScrollCards = 0;
 var sbWidth = 10;
 let scrolledAmount = 0;
-function ScrollCards(direction){
-    const cards = document.querySelectorAll('#wins-and-highlights .wh-card');
-    const sb = document.querySelector('#wins-and-highlights .custom-scrollbar span')
-    const container = document.querySelector('#wins-and-highlights .cards-container');
-    const sections = document.querySelectorAll('#wins-and-highlights .section')
+function ScrollCards(direction, targetCards){
+    
+    const cards = document.querySelectorAll(`${targetCards} .wh-card`);
+    const sb = document.querySelector(`${targetCards} .custom-scrollbar span`)
+    const container = document.querySelector(`${targetCards} .cards-container`);
+    const sections = document.querySelectorAll(`${targetCards} .section`);
 
 
     const totalScrollAmount = (cards.length - 2) * cards[cards.length - 2].clientWidth;
@@ -203,12 +222,12 @@ function ScrollCards(direction){
     switch (direction){
         case "right":
             if(scrolledAmount > 0 ){
-                scrolledAmount += (document.querySelector('.last-wh-card').clientWidth) *-1;
+                scrolledAmount += (document.querySelector(`${targetCards} .last-wh-card`).clientWidth) *-1;
                 container.scrollLeft = scrolledAmount;
                 sections.forEach(section =>{
                     if((section.getBoundingClientRect().right <= (window.innerWidth / .90)  && section.getBoundingClientRect().left <= document.querySelector('.inner-bcs-row').clientWidth)){
-                        document.querySelector('.custom-scrollbar span').setAttribute('data-slider-color', section.getAttribute('data-slider-color'));
-                        document.querySelector('.slider-section-titles').textContent = section.getAttribute('data-title');
+                        document.querySelector(`${targetCards} .custom-scrollbar span`).setAttribute('data-slider-color', section.getAttribute('data-slider-color'));
+                        document.querySelector(`${targetCards} .slider-section-titles`).textContent = section.getAttribute('data-title');
                     }
                 })
             }
@@ -216,23 +235,18 @@ function ScrollCards(direction){
             break;
         case "left":
             if(((scrolledAmount/totalScrollAmount)*100) < 100){
-                scrolledAmount += (document.querySelector('.last-wh-card').clientWidth);
+                scrolledAmount += (document.querySelector(`${targetCards} .last-wh-card`).clientWidth);
                 container.scrollLeft = scrolledAmount;
                 sections.forEach(section =>{
                     if(section.getBoundingClientRect().left <= (window.innerWidth / 1.5)){
-                        document.querySelector('.custom-scrollbar span').setAttribute('data-slider-color', section.getAttribute('data-slider-color'));
-                        document.querySelector('.slider-section-titles').textContent = section.getAttribute('data-title');
+                        document.querySelector(`${targetCards} .custom-scrollbar span`).setAttribute('data-slider-color', section.getAttribute('data-slider-color'));
+                        document.querySelector(`${targetCards} .slider-section-titles`).textContent = section.getAttribute('data-title');
                     }
                 })
             }
             break;
     }
 
-    let tmp = document.querySelector('.last-wh-card').getBoundingClientRect().left + document.querySelector('.last-wh-card').clientWidth;
-    tmp = document.querySelector('.inner-bcs-row').getBoundingClientRect().right / tmp;
-    tmp = tmp * 100;
-
-    console.log(scrolledAmount);
     sb.style = `width: ${(scrolledAmount/totalScrollAmount) *100}%`;
 
 }

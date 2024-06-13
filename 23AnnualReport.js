@@ -702,11 +702,12 @@ function ourWorkImagesAnimation(){
 function InsertSvg(){
     const selctors = document.querySelectorAll('.svg-insert.set');
 
-    selctors.forEach(selctor => {
+    selctors.forEach(selector => {
         let svg = selector.getAttribute('svg-code');
+        let position = selector.getAttribute('svg-position');
         if(selector.getBoundingClientRect().top <= window.innerHeight * .75){
             selector.classList.remove('set');
-            selector.insertAdjacentHTML('beforeend', svg);
+            selector.insertAdjacentHTML(position, svg);
         }
     })
 }

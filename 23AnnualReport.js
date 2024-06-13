@@ -1,39 +1,8 @@
 const header = document.querySelector('#custom-header');
 var sUp = true;
-console.log('ran');
-let words = [];
-const str = 'fifty six thousand seven hundred sixty two ';
-let newStr = '';
-let complete = '';
-window.addEventListener('load', ()=>{
-
-//FixedImages();
-InsertStateCards();
-
-
-document.getElementById('year-container').style = `min-height: ${document.querySelector('#year-container').clientHeight}px`;
-
-for(let i = 0; i < str.length; i++){
-if(str[i] === ' '){
-    words.push(newStr);
-    newStr = "";
-}else {
-    newStr += str[i];
-}
-}
-
-words.forEach(word =>{
-complete += '<span class="animate" data-animate="fade-up-opacity">' + word + '</span> ';
-})
-
-console.log(complete);
-
-
-})
 
 window.addEventListener('DOMContentLoaded', ()=>{
     LargestOurWorkRow();
-    console.log('ran');
 })
 
 var scrolled = 0;
@@ -53,6 +22,7 @@ window.addEventListener('scroll', ()=>{
         }
     }catch(e){}
 
+    try{InsertSvg();}catch(e){}
     try{centerTitleChange();}catch(e){}
     try{yearInReview();}catch(e){}
     try{PageProgress();}catch(e){ }
@@ -727,4 +697,16 @@ function ourWorkImagesAnimation(){
             image.style = `top: ${tStyle[i]}%;`;
         }
     }
+}
+
+function InsertSvg(){
+    const selctors = document.querySelectorAll('.svg-insert.set');
+
+    selctors.forEach(selctor => {
+        let svg = selector.getAttribute('svg-code');
+        if(selector.getBoundingClientRect().top <= window.innerHeight * .75){
+            selector.classList.remove('set');
+            selector.insertAdjacentHTML('beforeend', svg);
+        }
+    })
 }

@@ -27,7 +27,6 @@ window.addEventListener('scroll', ()=>{
     try{yearInReview();}catch(e){console.log(e);}
     try{PageProgress();}catch(e){console.log(e);}
     try{globalScrollSum();}catch(e){console.log(e);}
-    try{atHomeSummaryScroll();}catch(e){console.log(e);}
     try{animateElements();}catch(e){console.log(e);}
     try{workInUsNumber();}catch(e){console.log(e);}
     //srollSum();

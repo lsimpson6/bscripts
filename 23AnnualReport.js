@@ -2,6 +2,8 @@ const header = document.querySelector('#custom-header');
 var sUp = true;
 
 window.addEventListener('DOMContentLoaded', ()=>{
+    InsertStateCards();
+    document.getElementById('year-container').style = `min-height: ${document.querySelector('#year-container').clientHeight}px`;
     LargestOurWorkRow();
 })
 
@@ -22,18 +24,19 @@ window.addEventListener('scroll', ()=>{
         }
     }catch(e){}
 
-    try{InsertSvg();}catch(e){console.log(e);}
-    try{centerTitleChange();}catch(e){console.log(e);}
-    try{yearInReview();}catch(e){console.log(e);}
-    try{PageProgress();}catch(e){console.log(e);}
-    try{globalScrollSum();}catch(e){console.log(e);}
-    try{animateElements();}catch(e){console.log(e);}
-    try{workInUsNumber();}catch(e){console.log(e);}
+    try{centerTitleChange();}catch(e){}
+    try{yearInReview();}catch(e){}
+    try{PageProgress();}catch(e){ }
+    try{globalScrollSum();}catch(e){}
+    try{atHomeSummaryScroll();}catch(e){}
+    try{InsertSvg();}catch(e){}
+    try{animateElements();}catch(e){}
+    try{workInUsNumber();}catch(e){}
     //srollSum();
-    try{refugeeImmigrantNumber();}catch(e){console.log(e);}
-    try{workInWoorldNumber();}catch(e){console.log(e);}
-    try{ourWorkImagesAnimation();}catch(e){console.log(e);}
-
+    try{refugeeImmigrantNumber();}catch(e){}
+    try{workInWoorldNumber();}catch(e){}
+    try{ourWorkImagesAnimation();}catch(e){}
+    
 
     if(window.scrollY <= scrolled){
         sUp = true;

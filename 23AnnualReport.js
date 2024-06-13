@@ -9,6 +9,11 @@ window.addEventListener('DOMContentLoaded', ()=>{
 
 var scrolled = 0;
 window.addEventListener('scroll', ()=>{
+
+    if(document.querySelector('#main').getAttribute('data-CardToList-isRan') != 'true'){
+        CardToList();
+        document.querySelector('#main').setAttribute('data-CardToList-isRan', 'true');
+    }
     
 
     try{
@@ -267,7 +272,7 @@ function InsertStateCards(isClicked){
     var animate = isClicked == true ? 'fade-up-translate' : 'fade-up-translate';
 
     if(cardContainerTop.getBoundingClientRect().top <= (window.innerHeight*2) && !InsertStateCardsIsRan){
-        CardToList();
+        
         for(let i in states){
             let rand = Math.floor(Math.random() * (4 - 10 + 1)) * -1;
             while(rand == prevRandom){

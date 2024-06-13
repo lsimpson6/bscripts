@@ -5,7 +5,6 @@ window.addEventListener('DOMContentLoaded', ()=>{
     InsertStateCards();
     document.getElementById('year-container').style = `min-height: ${document.querySelector('#year-container').clientHeight}px`;
     LargestOurWorkRow();
-    CardToList();
 })
 
 var scrolled = 0;
@@ -268,7 +267,7 @@ function InsertStateCards(isClicked){
     var animate = isClicked == true ? 'fade-up-translate' : 'fade-up-translate';
 
     if(cardContainerTop.getBoundingClientRect().top <= (window.innerHeight*2) && !InsertStateCardsIsRan){
-        
+        CardToList();
         for(let i in states){
             let rand = Math.floor(Math.random() * (4 - 10 + 1)) * -1;
             while(rand == prevRandom){
@@ -691,14 +690,15 @@ function ourWorkImagesAnimation(){
 }
 
 function InsertSvg(){
-    const selctors = document.querySelectorAll('.svg-insert.set');
+    const selctors = document.querySelectorAll('.insert-svg.set');
 
     selctors.forEach(selector => {
         let svg = selector.getAttribute('svg-code');
         let position = selector.getAttribute('svg-position');
-        if(selector.getBoundingClientRect().top <= window.innerHeight * .75){
+        if(selector.getBoundingClientRect().top <= window.innerHeight * 1.25){
             selector.classList.remove('set');
             selector.insertAdjacentHTML(position, svg);
+            console.log(svg);
         }
     })
 }

@@ -22,31 +22,19 @@ window.addEventListener('scroll', ()=>{
         }
     }catch(e){}
 
-    try{InsertSvg();}catch(e){}
-    try{centerTitleChange();}catch(e){}
-    try{yearInReview();}catch(e){}
-    try{PageProgress();}catch(e){ }
-    try{globalScrollSum();}catch(e){}
-    try{atHomeSummaryScroll();}catch(e){}
-    try{animateElements();}catch(e){}
-    try{workInUsNumber();}catch(e){}
+    try{InsertSvg();}catch(e){console.log(e);}
+    try{centerTitleChange();}catch(e){console.log(e);}
+    try{yearInReview();}catch(e){console.log(e);}
+    try{PageProgress();}catch(e){console.log(e);}
+    try{globalScrollSum();}catch(e){console.log(e);}
+    try{atHomeSummaryScroll();}catch(e){console.log(e);}
+    try{animateElements();}catch(e){console.log(e);}
+    try{workInUsNumber();}catch(e){console.log(e);}
     //srollSum();
-    try{refugeeImmigrantNumber();}catch(e){}
-    try{workInWoorldNumber();}catch(e){}
-    try{ourWorkImagesAnimation();}catch(e){}
-    
-    let tmp = window.scrollY;
+    try{refugeeImmigrantNumber();}catch(e){console.log(e);}
+    try{workInWoorldNumber();}catch(e){console.log(e);}
+    try{ourWorkImagesAnimation();}catch(e){console.log(e);}
 
-
-    try {
-        if(document.querySelector('#home .annual-report-title').getBoundingClientRect().top <= 200 && window.innerWidth > 1000){
-            document.querySelector('.year').style = `transition: .7s ease all; font-size: calc(100vw / 7); line-height: calc(100vw / ${25});`
-    
-        }else {
-            document.querySelector('.year').style = `transition: .7s ease all;`
-    
-        }
-    }catch(e){}
 
     if(window.scrollY <= scrolled){
         sUp = true;

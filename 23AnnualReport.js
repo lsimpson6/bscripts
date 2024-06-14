@@ -30,7 +30,7 @@ window.addEventListener('scroll', ()=>{
     }catch(e){}
 
     try{centerTitleChange();}catch(e){}
-    try{yearInReview();}catch(e){}
+
     try{PageProgress();}catch(e){ }
     try{globalScrollSum();}catch(e){}
     try{atHomeSummaryScroll();}catch(e){}
@@ -86,45 +86,6 @@ function Colors(){
     })
 }
 
-
-var i = 0;
-function yearInReview(){
-
-    let sticky = document.querySelector('#year-in-review .row-half');
-    const yir = document.getElementById('year-in-review');
-    let maxHeight = document.querySelector('.overflow h1').clientHeight;
-    let l = document.querySelector('#targetElement-yir').getBoundingClientRect().left;
-    let t = document.querySelector('#targetElement-yir').getBoundingClientRect().top;
-    
-    if(yir.getBoundingClientRect().top > sticky.getBoundingClientRect().top){
-        sticky.style = 'position: absolute; top: ' + 50 + '%; transform: translate(10%, -50%); left: ' + (50) + '%; z-index: 2;';
-    }else {
-        sticky.style = 'position: absolute; top: ' + 50 + '%; transform: translate(10%, -50%); left: ' + (50) + '%; z-index: 2;';
-    }
-
-    if(yir.getBoundingClientRect().top <= window.innerHeight){
-        const targetElement = document.getElementById('targetElement-yir');
-
-        var targetRect = yir.getBoundingClientRect().top - 100;
-
-        if(sUp){
-            targetRect = yir.getBoundingClientRect().top + window.innerHeight/5;
-        }
-
-        if(targetRect <= window.innerHeight * .20 && targetRect < window.innerHeight * .40){
-            i = maxHeight * 2;
-        }else if(targetRect <= window.innerHeight * .40 && targetRect < window.innerHeight * .60){
-            i = maxHeight;
-        }else if(targetRect <= window.innerHeight * .60 && targetRect < window.innerHeight * .80){
-            i = 0;
-        }
-
-        document.querySelectorAll('.overflow h1').forEach(el =>{
-
-            el.style = 'transform: translateY(-' + i + 'px);';
-        })
-    }
-}
 
 function LargestOurWorkRow(){
     const ourWork = document.querySelectorAll('.ourwork-row .inner-bcs-row');
@@ -488,7 +449,7 @@ const globalSum = removeCharcters(globalObj[0].served.servedSum) + globalObj[1].
 var globalScrollSumCounter = globalSum - 1000;
 function globalScrollSum(){
     const totalServedSum = document.getElementById('total-served-sum');
-    if(document.getElementById('year-in-review').getBoundingClientRect().top <= window.innerHeight*.76 && totalServedSum.getAttribute('data-ran') != "true"){
+    if(document.getElementById('around-the-world-v2').getBoundingClientRect().top <= window.innerHeight*.5 && totalServedSum.getAttribute('data-ran') != "true"){
         totalServedSum.setAttribute('data-ran', true);
         setInterval(()=>{
             if(globalScrollSumCounter < globalSum){

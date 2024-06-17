@@ -668,3 +668,13 @@ function InsertSvg(){
         }
     })
 }
+function downloadResources(){
+    const element = document.getElementById('download-report');
+    let attr = element.getAttribute('status');
+
+    if(attr == "open"){
+        element.setAttribute('status', 'close');
+    }else {
+        element.setAttribute('status', 'open');
+    }
+}

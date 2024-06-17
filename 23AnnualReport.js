@@ -638,7 +638,7 @@ function ourWorkImagesAnimation(){
 
     for(var i = 0; i < images.length; i++){
         let image = images[i];
-        if(image.getBoundingClientRect().top <= window.innerHeight && image.getBoundingClientRect().top < ((window.innerHeight + image.clientHeight)*-1)){
+        if(image.getBoundingClientRect().top <= (-1*(window.innerHeight) && image.getBoundingClientRect().bottom > 0){
             
             if(sUp){
                 if(tStyle[i] <= 15){

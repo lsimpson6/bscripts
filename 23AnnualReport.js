@@ -638,16 +638,16 @@ function ourWorkImagesAnimation(){
 
     for(var i = 0; i < images.length; i++){
         let image = images[i];
-        if(image.getBoundingClientRect().top > 0 && image.getBoundingClientRect().bottom < window.innerHeight){
+        if(image.getBoundingClientRect().top <= window.innerHeight && image.getBoundingClientRect().top < ((window.innerHeight + image.clientHeight)*-1)){
             
             if(sUp){
                 if(tStyle[i] <= 15){
-                    tStyle[i] = (tStyle[i] += .5);
+                    tStyle[i] = (tStyle[i] += .25);
 
                 }
             }else{
                 if(tStyle[i] >= -15){
-                    tStyle[i] = (tStyle[i] -= .5);
+                    tStyle[i] = (tStyle[i] -= .25);
                 }
             }
             image.style = `top: ${tStyle[i]}%;`;

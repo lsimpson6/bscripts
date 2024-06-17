@@ -310,7 +310,7 @@ function CardToList(){
     let counter = 0;
     for(let i in states){
 
-        let dipslay = i > 3 && window.innerWidth > 1000 ? `d-none` : 'd-flex animate';
+        let dipslay = i > 3 && window.innerWidth > 768 ? `d-none` : 'd-flex animate';
         let code = `
         <div class="${dipslay} impact-at-home-card flex-column mt-5 mr-3" data-animate="fade-up-translate" >
             <h5>${states[i].title}</h5>

@@ -453,7 +453,7 @@ function globalScrollSum(){
     if(document.getElementById('around-the-world-v2').getBoundingClientRect().top <= window.innerHeight*.5 && totalServedSum.getAttribute('data-ran') != "true"){
         totalServedSum.setAttribute('data-ran', true);
         setInterval(()=>{
-            if(globalScrollSumCounter < globalSum){
+            if(globalScrollSumCounter <= globalSum){
                 totalServedSum.textContent = globalScrollSumCounter.toLocaleString();
             } 
             globalScrollSumCounter += 10

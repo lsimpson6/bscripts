@@ -30,7 +30,7 @@ window.addEventListener('scroll', ()=>{
     }catch(e){}
 
     try{centerTitleChange();}catch(e){}
-
+    try{headerColorSwaps();}catch(e){}
     try{PageProgress();}catch(e){ }
     try{globalScrollSum();}catch(e){}
     try{atHomeSummaryScroll();}catch(e){}
@@ -677,4 +677,19 @@ function downloadResources(){
     }else {
         element.setAttribute('status', 'open');
     }
+}
+
+function headerColorSwaps(){
+    const menu = document.querySelector('#custom-header');
+
+    pickColors.forEach(row => {
+        if(row.getBoundingClientRect().top <= menu.clientHeight){
+            if(row.getAttribute('data-is-dark') == true){
+                menu.setAttribute('data-color', 'white');
+            }else {
+                menu.setAttribute('data-color', 'violet');
+            }
+        }
+    })
+
 }

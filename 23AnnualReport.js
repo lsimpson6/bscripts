@@ -446,7 +446,7 @@ function usaScrollSum(){
     }
 }
 
-const globalSum = removeCharcters(globalObj[0].served.servedSum) + globalObj[1].served + globalObj[2].served + globalObj[3].served;
+const globalSum = removeCharcters(globalObj[0].served.servedSum) + globalObj[1].served + globalObj[2].served + globalObj[3].served + globalObj[4].served;
 var globalScrollSumCounter = globalSum - 1000;
 function globalScrollSum(){
     const totalServedSum = document.getElementById('total-served-sum');

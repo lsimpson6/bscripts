@@ -683,7 +683,7 @@ function headerColorSwaps(){
     const menu = document.querySelector('#custom-header');
     
     document.querySelectorAll('.bcs-widget-row').forEach(row => {
-        if(row.getBoundingClientRect().top <= menu.clientHeight){
+        if(row.getBoundingClientRect().top <= menu.clientHeight && row.getBoundingClientRect().top > 0){
             if(row.getAttribute('data-is-dark') == true){
                 menu.setAttribute('data-color', 'white');
             }else {

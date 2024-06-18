@@ -220,8 +220,8 @@ const globalObj = {
     0: {name:"United States", title:"United States", served: usaTotal().served, programs: usaTotal().programs, locations: usaTotal().locations, expenditures: usaTotal().expenditures},
     1: {name:"Colombia", title:"Colombia", served: 7127, programs: 1, locations: 5, expenditures: 473141},
     2: {name:"Ghana", title:"Ghana", served: 100, programs: 1, locations: 1, expenditures: 252021},
-    2: {name:"Ethiopia", title:"Ethiopia", served: 1389, programs: 4, locations: 4, expenditures: 1374268},
-    3: {name:"Haiti", title:"Haiti", served: 16, programs: 2, locations: 1, expenditures: 192932}
+    3: {name:"Ethiopia", title:"Ethiopia", served: 1389, programs: 4, locations: 4, expenditures: 1374268},
+    4: {name:"Haiti", title:"Haiti", served: 16, programs: 2, locations: 1, expenditures: 192932}
 }
 
 var InsertStateCardsIsRan = false;

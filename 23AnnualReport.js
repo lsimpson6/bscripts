@@ -681,7 +681,7 @@ function downloadResources(){
 function headerTransitions(){
     const menu = document.querySelector('#custom-header');
     if(window.innerWidth > 768){
-        document.querySelectorAll('.bcs-widget-row').forEach(row => {
+        document.querySelectorAll('.cswap-header').forEach(row => {
             if(row.getBoundingClientRect().top <= menu.clientHeight && row.getBoundingClientRect().top < 0){
                 menu.setAttribute('data-dark', row.getAttribute('data-is-dark'));
             }

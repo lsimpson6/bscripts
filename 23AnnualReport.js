@@ -30,7 +30,7 @@ window.addEventListener('scroll', ()=>{
     }catch(e){}
 
     try{centerTitleChange();}catch(e){}
-    try{headerColorSwaps();}catch(e){}
+    try{headerTransition();}catch(e){}
     try{PageProgress();}catch(e){ }
     try{globalScrollSum();}catch(e){}
     try{atHomeSummaryScroll();}catch(e){}

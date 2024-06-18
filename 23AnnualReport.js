@@ -196,30 +196,31 @@ function PageProgress(){
 const states = {
     0: {state:"Arkansas", title:"Arkansas", served:"312", programs:"1", locations:"1", expenditures:"223,163"},
     1: {state:"California", title:"California", served:"1,981", programs:"20", locations:"5", expenditures:"5,651,840"},
-    2: {state:"Colorado & Texas", title:"Colorado & Texas", served:"1,396", programs:"5", locations:"3", expenditures:"2,927,738"},
+    2: {state:"Colorado & Texas", title:"Colorado & Texas", served:"1,396", programs:"5", locations:"3", expenditures:"2,921,761"},
     3: {state:"Florida", title:"Florida", served:"2,708", programs:"6", locations:"3", expenditures:"2,927,738"},
     4: {state:"Georgia", title:"Georgia", served:"3,589", programs:"20", locations:"5", expenditures:"10,863,312"},
     5: {state:"Illinois", title:"Illinois", served:"10,398", programs:"7", locations:"1", expenditures:"1,985,081"},
     6: {state:"Indiana", title:"Indiana", served:"698", programs:"5", locations:"1", expenditures:"3,715,650"},
     7: {state:"Maryland & DC", title:"Maryland & DC", served:"1,277", programs:"7", locations:"2", expenditures:"3,882,078"},
-    8: {state:"Michigan", title:"Michigan", served:"11,786", programs:"66", locations:"14", expenditures:"76,612,607"},
+    8: {state:"Michigan", title:"Michigan", served:"11,808", programs:"66", locations:"14", expenditures:"70,566,495"},
     9: {state:"Minnesota", title:"Minnesota", served:"24", programs:"0", locations:"0", expenditures:"95,309"},
     10: {state:"Missouri", title:"Missouri", served:"795", programs:"10", locations:"4", expenditures:"4,282,546"},
     11: {state:"Nebraska & Iowa", title:"Nebraska & Iowa", served:"200", programs:"5", locations:"2", expenditures:"453,065"},
-    12: {state:"New England (Massachusetts, Road Island, Vermont, New Hampshire, Maine)", title:"New England", served:"1,514", programs:"8", locations:"4", expenditures:"3,746,016"},
-    13: {state:"New Jersey, Delaware, Pennsylvania, and West Virginia & New York", title:"North East", served:"7,611", programs:"49", locations:"14", expenditures:"30,012,970"},
+    12: {state:"New England (Massachusetts, Road Island, Vermont, New Hampshire, Maine)", title:"New England", served:"1,514", programs:"8", locations:"4", expenditures:"3,546,016"},
+    13: {state:"New Jersey, Delaware, Pennsylvania, and West Virginia & New York", title:"North East", served:"7,613", programs:"49", locations:"14", expenditures:"30,012,970"},
     14: {state:"North Carolina", title:"North Carolina", served:"892", programs:"3", locations:"1", expenditures:"3,962,907"},
     15: {state:"South Carolina", title:"South Carolina", served:"500", programs:"2", locations:"1", expenditures:"807,940"},
     16: {state:"South Dakota", title:"South Dakota", served:"79", programs:"5", locations:"1", expenditures:"359,409"},
     17: {state:"Tennessee", title:"Tennessee", served:"1,351", programs:"13", locations:"5", expenditures:"4,645,233"},
     18: {state:"Virginia", title:"Virginia", served:"623", programs:"7", locations:"1", expenditures:"892,373"},
-    19: {state:"Wisconsin", title:"Wisconsin", served:"208", programs:"8", locations:"2", expenditures:"3,420,350"}
+    19: {state:"Wisconsin", title:"Wisconsin", served:"208", programs:"8", locations:"2", expenditures:"2,935,050"}
 }
 
 const globalObj = {
     0: {name:"United States", title:"United States", served: usaTotal().served, programs: usaTotal().programs, locations: usaTotal().locations, expenditures: usaTotal().expenditures},
     1: {name:"Colombia", title:"Colombia", served: 7127, programs: 1, locations: 5, expenditures: 473141},
-    2: {name:"Ghana", title:"Ethiopia", served: 1687, programs: 4, locations: 4, expenditures: 1374268},
+    2: {name:"Ghana", title:"Ghana", served: 100, programs: 1, locations: 1, expenditures: 252021},
+    2: {name:"Ethiopia", title:"Ethiopia", served: 1389, programs: 4, locations: 4, expenditures: 1374268},
     3: {name:"Haiti", title:"Haiti", served: 16, programs: 2, locations: 1, expenditures: 192932}
 }
 

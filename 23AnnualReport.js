@@ -687,7 +687,7 @@ function headerTransitions(){
             }
         })
     }else {
-        let xy = sUp == true ? 'transform: translateY(-50px);' : '';
+        var xy = sUp == false ? 'transform: translateY(-100px);' : '';
         menu.style = xy;
     }
 }

@@ -678,11 +678,16 @@ function downloadResources(){
     }
 }
 
-function headerColorSwaps(){
+function headerTransitions(){
     const menu = document.querySelector('#custom-header');
-    document.querySelectorAll('.bcs-widget-row').forEach(row => {
-        if(row.getBoundingClientRect().top <= menu.clientHeight && row.getBoundingClientRect().top < 0){
-            menu.setAttribute('data-dark', row.getAttribute('data-is-dark'));
-        }
-    })
+    if(window.innerWidth > 768){
+        document.querySelectorAll('.bcs-widget-row').forEach(row => {
+            if(row.getBoundingClientRect().top <= menu.clientHeight && row.getBoundingClientRect().top < 0){
+                menu.setAttribute('data-dark', row.getAttribute('data-is-dark'));
+            }
+        })
+    }else {
+        let xy = sUp == true ? 'transform: translateY(-50px);' : '';
+        menu.style = xy;
+    }
 }

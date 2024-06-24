@@ -489,6 +489,7 @@ function menu(){
     }else {
         nav.setAttribute('menu-status', "open");
         document.getElementById('main').style = 'filter: blur(20px) brightness(.7);';
+        document.getElementById('custom-header').setAttribute('data-dark','true');
     }
 }
 

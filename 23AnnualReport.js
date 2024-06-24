@@ -270,11 +270,10 @@ function ShowAllCards(){
 }
 
 function CardToList(){
-    const cardContainerTop = document.getElementById('impact-at-home-cards-top');
+
     const worldContainer = document.getElementById('impact-around-world-cards');
-    const cardContainerBottom = document.getElementById('impact-at-home-cards-bottom');
     const list = document.getElementById('impact-at-home-cards-list');
-    cardContainerTop.innerHTML = '';
+
     list.style = '';
 
     for(let g in globalObj){

@@ -1,5 +1,6 @@
 const header = document.querySelector('#custom-header');
 var sUp = true;
+const cLazy = document.querySelectorAll('.lazy-bg');
 
 window.addEventListener('DOMContentLoaded', ()=>{
     InsertStateCards();
@@ -9,7 +10,14 @@ window.addEventListener('DOMContentLoaded', ()=>{
 
 var scrolled = 0;
 window.addEventListener('scroll', ()=>{
-
+      
+    cLazy.forEach(l => {
+        if(l.getBoundingClientRect().top <= (window.innerHeight * 1.5)){
+            l.style="background-image: " + l.getAttribute('data-bg');
+            l.classList.remove('lazy-bg');
+        }
+    })
+    
     if(document.querySelector('#main').getAttribute('data-CardToList-isRan') != 'true'){
         CardToList();
         document.querySelector('#main').setAttribute('data-CardToList-isRan', 'true');

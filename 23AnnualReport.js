@@ -41,7 +41,6 @@ window.addEventListener('scroll', ()=>{
     try{headerTransitions();}catch(e){}
     try{PageProgress();}catch(e){ }
     try{globalScrollSum();}catch(e){}
-    try{atHomeSummaryScroll();}catch(e){}
     try{InsertSvg();}catch(e){}
     try{animateElements();}catch(e){}
     try{workInUsNumber();}catch(e){}
@@ -345,53 +344,6 @@ function CardToList(){
 
     }
 
-    const summary = document.getElementById('impact-at-home-summary');
-
-
-    let summaryCode = `
-    <div class="d-flex flex-row scroll">
-        <div class="d-flex flex-column " style="margin-right: 7rem;">
-        <h5 class="mb-0">people served</h5>
-            <h1 class="light-font" style="font-size: calc(100vw / 15);">${usaTotal().served.servedSum}</h1>
-        </div>
-        <div class="d-flex flex-column " style="margin-right: 7rem;">
-        <h5 class="mb-0">locations</h5>
-            <h1 class="light-font" style="font-size: calc(100vw / 15);">${usaTotal().locations.locationsSum}</h1>
-        </div>
-        <div class="d-flex flex-column " style="margin-right: 7rem;">
-        <h5 class="mb-0 ">programs</h5>
-            <h1 class="light-font" style="font-size: calc(100vw / 15);">${usaTotal().programs.programSum}</h1>
-        </div>
-        <div class="d-flex flex-column " style="margin-right: 7rem;">
-        <h5 class="mb-0">people served</h5>
-            <h1 class="light-font" style="font-size: calc(100vw / 15);">${usaTotal().served.servedSum}</h1>
-        </div>
-        <div class="d-flex flex-column " style="margin-right: 7rem;">
-        <h5 class="mb-0">locations</h5>
-            <h1 class="light-font" style="font-size: calc(100vw / 15);">${usaTotal().locations.locationsSum}</h1>
-        </div>
-        <div class="d-flex flex-column " style="margin-right: 7rem;">
-        <h5 class="mb-0 ">programs</h5>
-            <h1 class="light-font" style="font-size: calc(100vw / 15);">${usaTotal().programs.programSum}</h1>
-        </div>
-        <div class="d-flex flex-column " style="margin-right: 7rem;">
-        <h5 class="mb-0">people served</h5>
-            <h1 class="light-font" style="font-size: calc(100vw / 15);">${usaTotal().served.servedSum}</h1>
-        </div>
-        <div class="d-flex flex-column " style="margin-right: 7rem;">
-        <h5 class="mb-0">locations</h5>
-            <h1 class="light-font" style="font-size: calc(100vw / 15);">${usaTotal().locations.locationsSum}</h1>
-        </div>
-        <div class="d-flex flex-column " style="margin-right: 7rem;">
-        <h5 class="mb-0 ">programs</h5>
-            <h1 class="light-font" style="font-size: calc(100vw / 15);">${usaTotal().programs.programSum}</h1>
-        </div>
-    </div>
-    `;
-
-    summary.insertAdjacentHTML('afterbegin', summaryCode);
-
-
 
 }
 
@@ -472,15 +424,6 @@ function globalScrollSum(){
     }
 }
 
-let iahSummaryIdCountScrolled = 0
-function atHomeSummaryScroll(){
-    var iahSummaryId = document.querySelector('#impact-at-home-summary .scroll');
-
-    if(iahSummaryId.getBoundingClientRect().top <= window.innerHeight && iahSummaryId.getBoundingClientRect().bottom >= 0){
-        if(sUp){iahSummaryIdCountScrolled += .25}else{iahSummaryIdCountScrolled -= .25};
-        iahSummaryId.style = `transform: translateX(${iahSummaryIdCountScrolled}%);`;
-    }
-}
 
 document.querySelector('.menu').addEventListener('click', ()=>{
     menu();

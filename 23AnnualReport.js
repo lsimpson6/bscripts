@@ -645,3 +645,10 @@ function headerTransitions(){
         menu.style = xy;
     }
 }
+
+function ourWorkSlider(element, xAmount){
+    
+  document.querySelectorAll(element).forEach(el => {
+    el.style = 'transform: translate(' + xAmount + '%); min-width: 100%; transition: .3s ease all;';
+  })
+}

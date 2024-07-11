@@ -103,20 +103,20 @@
     <div class="inner-bcs-row py-5">
         <h3>SCHEDULE & DETAILS</h3>
         <div class="d-flex flex-row py-5 flex-wrap">
-            <div class="schedule-toggles">
-                <div class="toggle mb-5" onclick="scheduleSlider('.day-schedule.start-here')" data-active="true">
+            <div class="schedule-toggles" data-top="0">
+                <div class="toggle mb-5 start-here" onclick="scheduleSlider('.day-schedule.start-here', '0', '.toggle.start-here')" data-active="true">
                     <h5 class="strong">START HERE</h5>
                     <h5 class="light">DETAILS</h5>
                 </div>
-                <div class="toggle mb-5" data-active="false">
+                <div class="toggle mb-5 thu" data-active="false">
                     <h5 class="strong">THURSDAY</h5>
                     <h5 class="light">10.24.2024</h5>
                 </div>
-                <div class="toggle mb-5" data-active="false">
+                <div class="toggle mb-5 fri" data-active="false">
                     <h5 class="strong">FRIDAY</h5>
                     <h5 class="light">10.24.2024</h5>
                 </div>
-                <div class="toggle mb-5" data-active="false">
+                <div class="toggle mb-5 sat" data-active="false">
                     <h5 class="strong">SATURDAY</h5>
                     <h5 class="light">10.24.2024</h5>
                 </div>
@@ -137,6 +137,25 @@
         </div>
     </div>
 </div>
+
+<script>
+    function scheduleSlider(daySchedule, markerPosition, setActive){
+        const toggleOptions = ['.toggle.start-here', '.toggle.thu', '.toggle.fri', '.toggle.sat'];
+        const dayOptions = ['.day-schedule.start-here', '.day-schedule.thu', '.day-schedule.fri', '.day-schedule.sat'];
+
+        const marker = document.querySelector('.schedule-toggles');
+        var day = document.querySelector(daySchedule);
+
+        toggleOptions.forEach(o => {
+            if(o != setActive){
+                o.setAttribute('data-active', 'false')
+            }
+        })
+        
+        marker.setAttribute('data-top', markerPosition);
+        document.querySelector(setActive).setAttribute('data-active', 'true');
+    }
+</script>
 
 <style>
     .cs-white {
@@ -162,13 +181,25 @@
 
     .schedule-toggles:after{
         left: -20px;
-        top: 0;
         height: calc(25% - 3rem);
         content: '';
         background-color: black;
         position: absolute;
         width: 2px;
         border-radius: 10px;
+    }
+
+    .schedule-toggles[data-top="0"]:after{
+        top:0%;
+    }
+    .schedule-toggles[data-top="25"]:after{
+        top:25%;
+    }
+    .schedule-toggles[data-top="50"]:after{
+        top:50%;
+    }
+    .schedule-toggles[data-top="75"]:after{
+        top:75%;
     }
 
     .schedule-toggles .toggle[data-active="false"]{     

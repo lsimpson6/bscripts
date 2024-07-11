@@ -2,7 +2,13 @@
     #layout-header  {display: none !important;}
 </style>
 <div class="screen-background bcs-widget-row d-flex" id="hero">
-    <h1>2024</h1>
+    <div clas="d-flex flex-column date-year-location">
+        <h1>2024</h1>
+        <div class="w100 d-flex flex-row justify-content-between location-date">
+            <h5>GRAND RAPIDS, MICHIGAN</h5>
+            <h5>OCTOBER 24 - 26</h5>
+        </div>
+    </div>
     <div class="inner-bcs-row">
 
     </div>
@@ -21,11 +27,21 @@
         text-align: center;
         font-size: 40dvw;
         letter-spacing: 100px;
+        margin-bottom: 0;
+        width: 100%;
+        color: white;
+    }
+
+    #hero .location-date {
+        color: white;
+        mix-blend-mode: difference;
+    }
+
+    #hero .date-year-location {
         position: absolute;
         top: -9%;
         left: 46%;
         transform: translate(-50%, -2%);
-        margin-bottom: 0;
-        width: 100%;
     }
+
 </style>

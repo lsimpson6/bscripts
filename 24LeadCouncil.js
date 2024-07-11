@@ -12,12 +12,24 @@ function dayScheduleSlider(t, daySchedule, markerPosition, setActive){
             document.querySelector(o).setAttribute('data-active', 'true')
         }
     })
-    console.log(t);
+
+    toggleOptions.forEach(o => {
+        if(o != setActive){
+            document.querySelector(o).setAttribute('data-active', 'false')
+        }else {
+            document.querySelector(o).setAttribute('data-active', 'true')
+        }
+    })
+
+    dayOptions.forEach(d => {
+        if(d != setActive){
+            document.querySelector(d).setAttribute('data-active', 'false')
+        }else {
+            document.querySelector(d).setAttribute('data-active', 'true')
+        }
+    })
+
     marker.setAttribute('data-top', markerPosition);
 }
 
-document.querySelectorAll('.toggle').forEach(t => t.addEventListener('click',()=>{
-    console.log(t);
-    dayScheduleSlider(t, t.getAttribute('data-day'), t.getAttribute('data-top'), t.getAttribute('set-active'));
-    console.log(t.getAttribute('data-day'), t.getAttribute('data-top'), t.getAttribute('set-active'));
-}))
+document.querySelectorAll('.toggle').forEach(t => t.addEventListener('click',()=>{dayScheduleSlider(t, t.getAttribute('data-day'), t.getAttribute('data-top'), t.getAttribute('set-active'));}))

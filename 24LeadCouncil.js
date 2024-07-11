@@ -7,17 +7,9 @@ function dayScheduleSlider(t, daySchedule, markerPosition, setActive){
 
     toggleOptions.forEach(o => {
         if(o != setActive){
-            document.querySelector(o).setAttribute('data-active', 'false')
+            document.querySelector(o).setAttribute('data-active', 'false');
         }else {
-            document.querySelector(o).setAttribute('data-active', 'true')
-        }
-    })
-
-    toggleOptions.forEach(o => {
-        if(o != setActive){
-            document.querySelector(o).setAttribute('data-active', 'false')
-        }else {
-            document.querySelector(o).setAttribute('data-active', 'true')
+            document.querySelector(o).setAttribute('data-active', 'true');
         }
     })
 

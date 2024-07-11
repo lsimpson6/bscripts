@@ -1,4 +1,4 @@
-<script src="https://cdn.jsdelivr.net/gh/lsimpson6/bscripts@tree/d46356938426869972b46c9bf6a8696d0dfecec9"></script>
+<script src="https://cdn.jsdelivr.net/gh/lsimpson6/bscripts@f7a098885e94bdde614d6a4d0f6f56bbdebcd8c5/24LeadCouncil.js"></script>
 <style>
     #layout-header  {display: none !important;}
     .fh-gap {height: 90vh;}
@@ -106,19 +106,19 @@
         <h3>SCHEDULE & DETAILS</h3>
         <div class="d-flex flex-row py-5 flex-wrap">
             <div class="schedule-toggles" data-top="0">
-                <div class="toggle mb-5 start-here" data-active="true" onclick="dayScheduleSlider('.day-schedule.start-here', '0', '.toggle.start-here');">
+                <div class="toggle mb-5 start-here" data-active="true" data-day=".day-schedule.start-here" set-active=".toggle.start-here" data-top="0">
                     <h5 class="strong">START HERE</h5>
                     <h5 class="light">DETAILS</h5>
                 </div>
-                <div class="toggle mb-5 thu" data-active="false"  onclick="dayScheduleSlider('.day-schedule.thu', '25', '.toggle.thu');">
+                <div class="toggle mb-5 thu" data-active="false" data-day=".day-schedule.thu"  set-active=".toggle.thu" data-top="25">
                     <h5 class="strong">THURSDAY</h5>
                     <h5 class="light">10.24.2024</h5>
                 </div>
-                <div class="toggle mb-5 fri" data-active="false"  onclick="dayScheduleSlider('.day-schedule.fri', '50', '.toggle.fri');">
+                <div class="toggle mb-5 fri" data-active="false" data-day=".day-schedule.fri" set-active=".toggle.fri"  data-top="50">
                     <h5 class="strong">FRIDAY</h5>
                     <h5 class="light">10.24.2024</h5>
                 </div>
-                <div class="toggle mb-5 sat" data-active="false"  onclick="dayScheduleSlider('.day-schedule.sat', '75', '.toggle.sat');">
+                <div class="toggle mb-5 sat" data-active="false" data-day=".day-schedule.sat"  set-active=".toggle.sat" data-top="75">
                     <h5 class="strong">SATURDAY</h5>
                     <h5 class="light">10.24.2024</h5>
                 </div>

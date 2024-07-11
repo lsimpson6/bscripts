@@ -106,26 +106,26 @@
         <h3>SCHEDULE & DETAILS</h3>
         <div class="d-flex flex-row py-5 flex-wrap">
             <div class="schedule-toggles" data-top="0">
-                <div class="toggle mb-5 start-here" data-active="true" data-day=".day-schedule.start-here" set-active=".toggle.start-here" data-top="0">
+                <div class="toggle mb-5 start-here" data-active="true" data-day=".day-schedule.start-here" data-slideAmount="0" data-top="0">
                     <h5 class="strong">START HERE</h5>
                     <h5 class="light">DETAILS</h5>
                 </div>
-                <div class="toggle mb-5 thu" data-active="false" data-day=".day-schedule.thu"  set-active=".toggle.thu" data-top="25">
+                <div class="toggle mb-5 thu" data-active="false" data-day=".day-schedule.thu"  data-slideAmount="-100" data-top="25">
                     <h5 class="strong">THURSDAY</h5>
                     <h5 class="light">10.24.2024</h5>
                 </div>
-                <div class="toggle mb-5 fri" data-active="false" data-day=".day-schedule.fri" set-active=".toggle.fri"  data-top="50">
+                <div class="toggle mb-5 fri" data-active="false" data-day=".day-schedule.fri" data-slideAmount="-200"  data-top="50">
                     <h5 class="strong">FRIDAY</h5>
                     <h5 class="light">10.24.2024</h5>
                 </div>
-                <div class="toggle mb-5 sat" data-active="false" data-day=".day-schedule.sat"  set-active=".toggle.sat" data-top="75">
+                <div class="toggle mb-5 sat" data-active="false" data-day=".day-schedule.sat"  data-slideAmount="-300" data-top="75">
                     <h5 class="strong">SATURDAY</h5>
                     <h5 class="light">10.24.2024</h5>
                 </div>
             </div>
             <div class="schedule-details pl-5">
 
-                <div class="day-schedule start-here" data-active="true">
+                <div class="day-schedule d-flex flex-row start-here">
                     <h4>EVENT DETAILS</h4>
                     <div class="d-flex my-4 flex-row">
                         <svg width="40px" height="40px" viewBox="-5.4 0 98.4 98.4" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Group_4" data-name="Group 4" transform="translate(-822.7 -241.5)"> <path id="Path_52" data-name="Path 52" d="M899.4,254.3H833.6a8.92,8.92,0,0,0-8.9,8.9V329a8.92,8.92,0,0,0,8.9,8.9h65.8a8.92,8.92,0,0,0,8.9-8.9V263.2A8.92,8.92,0,0,0,899.4,254.3Z" fill="none" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8"></path> <line id="Line_25" data-name="Line 25" x2="21.2" transform="translate(842.6 283.7)" fill="none" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8"></line> <line id="Line_26" data-name="Line 26" x2="45.9" transform="translate(842.6 302)" fill="none" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8"></line> <line id="Line_27" data-name="Line 27" y2="19.6" transform="translate(853.6 243.5)" fill="none" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8"></line> <line id="Line_28" data-name="Line 28" y2="19.6" transform="translate(879.4 243.5)" fill="none" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8"></line> </g> </g></svg>
@@ -137,16 +137,16 @@
                     </div>
                 </div>
 
-                <div class="day-schedule thu" data-active="false">
+                <div class="day-schedule thu">
                     <div class="d-flex flex-row">
-                        <h4>THURSDAY</h4>
+                        <h4>THURSDAY&nbsp;</h4>
                         <h4 class="light">10.24.2024</h4>
                     </div>
-                    <div class="d-flex my-4 flex-row">
+                    <div class="d-flex my-4 flex-column">
                         <p class="light">2:30 pm</p>
                         <p><strong>Site tour of Bridgeway facility (optional)</strong></p>
                     </div>
-                    <div class="d-flex my-4 flex-row">
+                    <div class="d-flex my-4 flex-column">
                         <p class="light">4:00 pm</p>
                         <p><strong>Afternoon arrivals and guest check-in</strong></p>
                     </div>
@@ -205,19 +205,10 @@
     }
 
     .day-schedule{
-        width: 100%;
+        min-width: 100%;
         transition: .3s ease all;
     }
 
-    .day-schedule[data-active="false"] {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-
-    .day-schedule[data-active="true"] {
-        transform: translateX(0%);
-        opacity: 1;
-    }
 
     .schedule-toggles .toggle[data-active="false"]{     
         cursor: pointer;

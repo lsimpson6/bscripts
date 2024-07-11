@@ -21,7 +21,7 @@ function dayScheduleSlider(t, daySchedule, markerPosition, setActive){
         }
     })
 
-    document.querySelectorAll('day-schedule').forEach(d => {
+    document.querySelectorAll('.day-schedule').forEach(d => {
         d.style = 'transform: translateX(' + + '%)';
     })
 

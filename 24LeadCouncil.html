@@ -6,7 +6,7 @@
     .bcs-widget-row:nth-of-type(2) {z-index: 2; }
     /* join us, cta and text widget */
     .bcs-widget-row:nth-of-type(3) {z-index: 3; position: relative; transform: translateY(-50px);}
-    .bcs-widget-row:nth-of-type(4) {z-index: 4;}
+    .bcs-widget-row:nth-of-type(4) {z-index: 4; position: relative; transform: translateY(-100px);}
     .bcs-widget-row:nth-of-type(5) {z-index: 5;}
     .bcs-widget-row:nth-of-type(6) {z-index: 6;}
     .bcs-widget-row:nth-of-type(7) {z-index: 7;}
@@ -80,7 +80,7 @@
 </style>
 
 <div class="bcs-widget-row color-scheme-blue border-top">
-    <div class="inner-bcs-row">
+    <div class="inner-bcs-row py-5">
         <h3>JOIN US</h3>
         <p  class="inner-bcs-text">Whether you're already a Lead Council member or considering becoming one, join us in 2024 in Grand Rapids!</p>
         <p  class="inner-bcs-text mb-4">During this intimate gathering, you'll interact with peers and Bethany executive staff as we explore ways to positively impact vulnerable kids and families.</p>
@@ -96,5 +96,61 @@
     }
     .btn-primary.ghost {
         border: 2p solid white;
+    }
+</style>
+
+<div class="bcs-widget-row color-scheme-none border-top">
+    <div class="inner-bcs-row py-5">
+        <h3>SCHEDULE & DETAILS</h3>
+        <div class="d-flex flex-row flex-wrap">
+            <div class="schedule-toggles">
+                <div class="toggle" data-active="true">
+                    <h5 class="strong">START HERE</h5>
+                    <h5 class="light">DETIALS</h5>
+                </div>
+                <div class="toggle" data-active="false">
+                    <h5 class="strong">THURSDAY</h5>
+                    <h5 class="light">10.24.2024</h5>
+                </div>
+                <div class="toggle" data-active="false">
+                    <h5 class="strong">FRIDAY</h5>
+                    <h5 class="light">10.24.2024</h5>
+                </div>
+                <div class="toggle" data-active="false">
+                    <h5 class="strong">SATURDAY</h5>
+                    <h5 class="light">10.24.2024</h5>
+                </div>
+            </div>
+            <div class="schedule-details">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .schedule-toggles {
+        width: 150px;
+        border-right: 2px solid lightgray;
+    }
+
+    .schedule-toggles .toggle .light{
+        font-weight: 200;
+    }
+
+    .schedule-toggles .toggle[data-active="true"]{
+        opacity: 1;
+        cursor: pointer;
+        transition: .3s ease all;
+    }
+
+    .schedule-toggles .toggle[data-active="false"]{     
+        cursor: pointer;
+        opacity: .5;
+        transition: .3s ease all;
+
+    }
+    .schedule-details {
+        width: calc(100% - 150px);
     }
 </style>

@@ -106,21 +106,23 @@
         <h3>SCHEDULE & DETAILS</h3>
         <div class="d-flex flex-row py-5 flex-wrap">
             <div class="schedule-toggles" data-top="0">
-                <div class="toggle mb-5 start-here" data-active="true" data-day=".day-schedule.start-here" data-slideAmount="0" data-top="0">
-                    <h5 class="strong">START HERE</h5>
-                    <h5 class="light">DETAILS</h5>
-                </div>
-                <div class="toggle mb-5 thu" data-active="false" data-day=".day-schedule.thu"  data-slideAmount="-100" data-top="25">
-                    <h5 class="strong">THURSDAY</h5>
-                    <h5 class="light">10.24.2024</h5>
-                </div>
-                <div class="toggle mb-5 fri" data-active="false" data-day=".day-schedule.fri" data-slideAmount="-200"  data-top="50">
-                    <h5 class="strong">FRIDAY</h5>
-                    <h5 class="light">10.24.2024</h5>
-                </div>
-                <div class="toggle mb-5 sat" data-active="false" data-day=".day-schedule.sat"  data-slideAmount="-300" data-top="75">
-                    <h5 class="strong">SATURDAY</h5>
-                    <h5 class="light">10.24.2024</h5>
+                <div class="marker">
+                    <div class="toggle mb-5 start-here" data-active="true" data-day=".day-schedule.start-here" data-slideAmount="0" data-top="0">
+                        <h5 class="strong">START HERE</h5>
+                        <h5 class="light">DETAILS</h5>
+                    </div>
+                    <div class="toggle mb-5 thu" data-active="false" data-day=".day-schedule.thu"  data-slideAmount="-100" data-top="25">
+                        <h5 class="strong">THURSDAY</h5>
+                        <h5 class="light">10.24.2024</h5>
+                    </div>
+                    <div class="toggle mb-5 fri" data-active="false" data-day=".day-schedule.fri" data-slideAmount="-200"  data-top="50">
+                        <h5 class="strong">FRIDAY</h5>
+                        <h5 class="light">10.24.2024</h5>
+                    </div>
+                    <div class="toggle mb-5 sat" data-active="false" data-day=".day-schedule.sat"  data-slideAmount="-300" data-top="75">
+                        <h5 class="strong">SATURDAY</h5>
+                        <h5 class="light">10.24.2024</h5>
+                    </div>
                 </div>
             </div>
             <div class="schedule-details d-flex flex-row pl-5">
@@ -237,16 +239,16 @@
         transition: .3s ease all;
     }
 
-    .schedule-toggles[data-top="0"]:after{
+    .schedule-toggles[data-top="0"] .marker:after{
         top:0%;
     }
-    .schedule-toggles[data-top="25"]:after{
+    .schedule-toggles[data-top="25"] .marker:after{
         top:25%;
     }
-    .schedule-toggles[data-top="50"]:after{
+    .schedule-toggles[data-top="50"] .marker:after{
         top:50%;
     }
-    .schedule-toggles[data-top="75"]:after{
+    .schedule-toggles[data-top="75"] .marker:after{
         top:75%;
     }
 

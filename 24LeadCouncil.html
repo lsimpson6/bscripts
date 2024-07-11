@@ -110,7 +110,7 @@
 
         toggleOptions.forEach(o => {
             if(o != setActive){
-                o.setAttribute('data-active', 'false')
+                document.querySelector(o).setAttribute('data-active', 'false')
             }
         })
         

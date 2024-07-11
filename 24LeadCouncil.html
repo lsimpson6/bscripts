@@ -124,6 +124,7 @@
                 </div>
             </div>
             <div class="schedule-details pl-5">
+
                 <div class="day-schedule start-here" data-active="true">
                     <h4>EVENT DETAILS</h4>
                     <div class="d-flex my-4 flex-row">
@@ -135,6 +136,22 @@
                         <p class="ml-4">JW Marriott <br> 235 Louis Street NW <br> Grand Rapids, MI 49503 </p>
                     </div>
                 </div>
+
+                <div class="day-schedule thu" data-active="false">
+                    <div class="d-flex flex-row">
+                        <h4>THURSDAY</h4>
+                        <h4 class="light">10.24.2024</h4>
+                    </div>
+                    <div class="d-flex my-4 flex-row">
+                        <p class="light">2:30 pm</p>
+                        <p><strong>Site tour of Bridgeway facility (optional)</strong></p>
+                    </div>
+                    <div class="d-flex my-4 flex-row">
+                        <p class="light">4:00 pm</p>
+                        <p><strong>Afternoon arrivals and guest check-in</strong></p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
@@ -152,7 +169,7 @@
         position: relative;
     }
 
-    .schedule-toggles .toggle .light{
+    .schedule-toggles .toggle .light, .schedule-details .light{
         font-family: GT-Eesti-Pro-Display-Light, sans-serif !important;
     }
 
@@ -189,6 +206,7 @@
 
     .day-schedule{
         width: 100%;
+        transition: .3s ease all;
     }
 
     .day-schedule[data-active="false"] {

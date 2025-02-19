@@ -442,7 +442,7 @@ function init_mobile(){
     var todo = document.querySelectorAll('.init-mobile');
 
     todo.forEach(el =>{
-        if(el.getBoundingClientRect().top <= window.innerHeight + 100){
+        if(el.getBoundingClientRect().top <= (window.innerHeight + window.innerHeight*.25)){
             console.log(todo.length)
             el.classList.add('done');
         }

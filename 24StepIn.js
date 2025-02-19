@@ -433,6 +433,7 @@ function scroll_whatIf(){
     h2.forEach(h =>{
         if(h.getBoundingClientRect().top <= window.innerHeight - (window.innerHeight/4)){
             h.style.opacity = 1;
+            h.classList.add('strike');
         }
     })
 

@@ -24,10 +24,8 @@ function all_drawings(){
     draw_svgDynamic_scroll(".draw-highlight-motivation-c path", "#motivation", 1);
     draw_svgDynamic_scroll(".draw-highlight-motivation-d path", "#motivation", 1);
     //draw_svgDynamic_scroll("#timeline .draw-highlight path", "#timeline", 0)
-    draw_svgDynamic_scroll("#draw-what-if-a", "#what-if", 1);
-    draw_svgDynamic_scroll("#draw-what-if-b", "#what-if", 1);
-    //draw_svgDynamic_scroll(".draw-what-if-a path", "#what-if", 1);
-    //draw_svgDynamic_scroll(".draw-what-if-b path", "#what-if", 1);
+    draw_svgDynamic_scroll(".draw-what-if-a path", "#what-if", 1);
+    draw_svgDynamic_scroll(".draw-what-if-b path", "#what-if", 1);
     
 }
 

@@ -358,7 +358,7 @@ function open_microsite(target){
             },
             'button':{
                 cta: [
-                    ["Donate Now", "/campaigns/step-in/give?" + params],
+                    ["Donate Now", "/campaigns/step-in/give" + params],
                     ["Learn More", "#contact"]
                 ]
             },

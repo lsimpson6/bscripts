@@ -1,3 +1,27 @@
+const currentWindowPath = window.location.pathname;
+var initWindowWidth = window.innerWidth;
+window.addEventListener('resize', ()=>{
+redirect();
+}) 
+
+function redirect(){
+    var params = new URLSearchParams(window.location.search);
+    let width = window.innerWidth;
+
+    if(width != initWindowWidth){
+        if(width < 801){
+            if(currentWindowPath != '/campaign/step-in/dev'){
+                window.location.href = 'https://bethany.org/campaign/step-in/dev?' + params;
+            }        
+            }else{
+            if(currentWindowPath != '/campaigns/step-in/dev'){
+                window.location.href = 'https://bethany.org/campaigns/step-in/dev?' + params;
+            }
+        }
+    }
+}
+    
+
 function loadingCheck(){
     if(document.querySelector('body').getAttribute('isLoading') == 'true'){
         window.scrollTo({
@@ -12,7 +36,7 @@ window.addEventListener('scroll', ()=>{
     scroll_hero();
     scroll_buckets();
     all_drawings();
-    scroll_timeline();
+
     scroll_whatIf();
 })
 
@@ -23,9 +47,7 @@ function all_drawings(){
     draw_svgDynamic_scroll(".draw-highlight-motivation-b path", "#motivation", 1);
     draw_svgDynamic_scroll(".draw-highlight-motivation-c path", "#motivation", 1);
     draw_svgDynamic_scroll(".draw-highlight-motivation-d path", "#motivation", 1);
-    draw_svgDynamic_scroll("#timeline .draw-highlight path", "#timeline", 0)
-    //draw_svgDynamic_scroll(".draw-what-if-a path", "#what-if", 1);
-    //draw_svgDynamic_scroll(".draw-what-if-b path", "#what-if", 1);
+    draw_svgDynamic_scroll("#timeline .draw-highlight path", "#timeline", 0);
     
 }
 
@@ -84,6 +106,7 @@ function scroll_hero(){
     const a = hero.querySelector('.intro .a');
     const b = hero.querySelector('.intro .b');
     const balloon =  document.getElementById('hero').querySelector('.balloon');
+    const balloonRight = document.getElementById('hero').querySelector('.balloon').getAttribute('right');
     let top = (100-((window.innerHeight - document.querySelector('#motivation').getBoundingClientRect().top)/window.innerHeight)*100);
 
     const clouds = document.getElementById('motivation').querySelectorAll('.balloon .clouds');
@@ -101,14 +124,17 @@ function scroll_hero(){
         //hero.style = 'transition: .025s ease all; top:' + -1*(window.innerHeight - document.getElementById('motivation').getBoundingClientRect().top) + 'px';
 
     }
+    balloon.style = 'transition: .025s ease all; top: ' + top + '%; right:' + balloonRight + 'px;';
 
     if(document.querySelector('#motivation p').getBoundingClientRect().top <= window.innerHeight){
 
         if(document.getElementById('buckets').getBoundingClientRect().top <= document.querySelector('#motivation h2').getBoundingClientRect().top){
-            balloon.style = 'transition: .025s ease all; top: ' + top + '%;';
+            balloon.style = 'transition: .025s ease all; top: ' + top + '%; right:' + balloonRight + 'px;';
+
             document.getElementById('motivation').style.opacity = 0;
         }else {
-            balloon.style = 'transition: .025s ease all; top: ' + top + '%';
+            balloon.style = 'transition: .025s ease all; top: ' + top + '%; right:' + balloonRight + 'px;';
+
             document.getElementById('motivation').style.opacity = 1;
         }
     }
@@ -349,6 +375,7 @@ function open_microsite(target){
     }
     const content = microWidget.querySelector('.content');
 
+    document.querySelector('#buckets').style = 'z-index: 1001;';
     let h2 = document.createElement('h2');
     let h5 = document.createElement('h5');
     let close = document.createElement('h5');
@@ -423,7 +450,7 @@ function close_microsite(){
     const content = microWidget.querySelector('.content');
     content.innerHTML = '';
     //document.querySelector('.closewindow').classList.replace('show', 'hide');
-
+    document.querySelector('#buckets').style = 'z-index: 4;';
 }
 
 function scroll_whatIf(){
@@ -432,23 +459,8 @@ function scroll_whatIf(){
 
     h2.forEach(h =>{
         if(h.getBoundingClientRect().top <= window.innerHeight - (window.innerHeight/4)){
-            h.style.opacity = 1;
+            h.classList.add('done');
         }
     })
 
-}
-
-function scroll_timeline(){
-    let m = document.querySelector('#scroll-timeline');
-    const markers = m.querySelectorAll('.i');
-    const icons = document.querySelectorAll('#timeline .icon');
-
-    for(let i = markers.length - 1 ; i > -1; i--){
-        let marker = markers[i];
-
-        if(marker.getBoundingClientRect().top <= window.innerHeight){
-            scroll_theJourney(marker.getAttribute('data-m'));
-            break;
-        }
-    }
 }

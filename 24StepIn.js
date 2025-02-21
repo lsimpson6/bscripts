@@ -1,3 +1,26 @@
+const currentWindowPath = window.location.pathname;
+var initWindowWidth = window.innerWidth;
+window.addEventListener('resize', ()=>{
+redirect();
+}) 
+
+function redirect(){
+    var params = new URLSearchParams(window.location.search);
+    let width = window.innerWidth;
+
+    if(width != initWindowWidth){
+        if(width < 801){
+            if(currentWindowPath != '/campaign/step-in'){
+                window.location.href = 'https://bethany.org/campaign/step-in?' + params;
+            }        
+            }else{
+            if(currentWindowPath != '/campaigns/step-in/dev'){
+                window.location.href = 'https://bethany.org/campaigns/step-in?' + params;
+            }
+        }
+    }
+}
+
 function loadingCheck(){
     if(document.querySelector('body').getAttribute('isLoading') == 'true'){
         window.scrollTo({
@@ -14,6 +37,7 @@ window.addEventListener('scroll', ()=>{
     scroll_buckets();
     all_drawings();
     scroll_whatIf();
+    focus_area();
 })
 
 function all_drawings(){
@@ -448,4 +472,21 @@ function init_mobile(){
             el.classList.add('done');
         }
     })
+}
+
+
+function focus_area(){
+    const params = window.location.search;
+    const bucket = document.querySelector('#buckets');
+    if(!bucket.hasAttribute('set') && window.scrollY > window.innerHeight){
+        if(params.indexOf('focusarea=foster') > -1){
+            transition_bucketCards('foster')
+        }else if(params.indexOf('focusarea=donate') > -1){
+            transition_bucketCards('donate')
+        }else if(params.indexOf('focusarea=work') > -1){
+            transition_bucketCards('work')
+        }
+
+        bucket.setAttribute('set', true);
+    }
 }

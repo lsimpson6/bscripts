@@ -33,16 +33,15 @@ function loadingCheck(){
 }
 window.addEventListener('scroll', ()=>{
     loadingCheck();
-    scroll_hero();
     scroll_buckets();
     all_drawings();
-
+    focus_area();
     scroll_whatIf();
 })
 
 function all_drawings(){
 
-    draw_svgDynamic_scroll(".balloon .draw", "#balloon-draw-marker", .05);
+    draw_svgDynamic_scroll(".balloon .draw", "#motivation", .1);
     draw_svgDynamic_scroll(".draw-highlight-motivation-a path", "#motivation", 1);
     draw_svgDynamic_scroll(".draw-highlight-motivation-b path", "#motivation", 1);
     draw_svgDynamic_scroll(".draw-highlight-motivation-c path", "#motivation", 1);
@@ -99,46 +98,6 @@ function isScrollingDown(){
 }
 let rotate = 0;
 
-var cloudScroll = 0;
-function scroll_hero(){
-    const id = document.getElementById('hero-gap');
-    const hero = document.getElementById('hero');
-    const a = hero.querySelector('.intro .a');
-    const b = hero.querySelector('.intro .b');
-    const balloon =  document.getElementById('hero').querySelector('.balloon');
-    const balloonRight = document.getElementById('hero').querySelector('.balloon').getAttribute('right');
-    let top = (100-((window.innerHeight - document.querySelector('#motivation').getBoundingClientRect().top)/window.innerHeight)*100);
-
-    const clouds = document.getElementById('motivation').querySelectorAll('.balloon .clouds');
-
-    if(isScrollingDown()){
-        cloudScroll--;
-    }else {
-        cloudScroll++;
-    }
-    clouds.forEach(cloud =>{
-
-        cloud.style = 'transform:  translateX(' + (window.scrollY/window.innerHeight)*-10  + 'px);';
-    })
-    if(document.getElementById('motivation').getBoundingClientRect().top <= window.innerHeight){
-        //hero.style = 'transition: .025s ease all; top:' + -1*(window.innerHeight - document.getElementById('motivation').getBoundingClientRect().top) + 'px';
-
-    }
-    balloon.style = 'transition: .025s ease all; top: ' + top + '%; right:' + balloonRight + 'px;';
-
-    if(document.querySelector('#motivation p').getBoundingClientRect().top <= window.innerHeight){
-
-        if(document.getElementById('buckets').getBoundingClientRect().top <= document.querySelector('#motivation h2').getBoundingClientRect().top){
-            balloon.style = 'transition: .025s ease all; top: ' + top + '%; right:' + balloonRight + 'px;';
-
-            document.getElementById('motivation').style.opacity = 0;
-        }else {
-            balloon.style = 'transition: .025s ease all; top: ' + top + '%; right:' + balloonRight + 'px;';
-
-            document.getElementById('motivation').style.opacity = 1;
-        }
-    }
-}
 
 let cHeightForScrollBuckets = 0;
 function scroll_buckets(){
@@ -463,4 +422,20 @@ function scroll_whatIf(){
         }
     })
 
+}
+
+function focus_area(){
+    const params = window.location.search;
+    const bucket = document.querySelector('#buckets');
+    if(!bucket.hasAttribute('set') && window.scrollY > window.innerHeight){
+        if(params.indexOf('focusarea=foster') > -1){
+            transition_bucketCards('foster')
+        }else if(params.indexOf('focusarea=donate') > -1){
+            transition_bucketCards('donate')
+        }else if(params.indexOf('focusarea=work') > -1){
+            transition_bucketCards('work')
+        }
+
+        bucket.setAttribute('set', true);
+    }
 }

@@ -272,7 +272,7 @@ function open_microsite(target){
     const microWidget = document.querySelector('#micro-page');
     microWidget.classList.replace('close', 'open');
     microWidget.style = 'height: ' + (window.innerHeight) + 'px;';
-    var params = new URLSearchParams(window.location.search);
+    var params = window.location.search;
     let obj = {
         "Foster":{"title": "Foster", "hero": "Have a front row seat", 
             'copy':{

@@ -10,12 +10,12 @@ function redirect(){
 
     if(width != initWindowWidth){
         if(width < 801){
-            if(currentWindowPath != '/campaign/step-in/dev'){
-                window.location.href = 'https://bethany.org/campaign/step-in/dev?' + params;
+            if(currentWindowPath != '/campaign/step-in'){
+                window.location.href = 'https://bethany.org/campaign/step-in?' + params;
             }        
             }else{
-            if(currentWindowPath != '/campaigns/step-in/dev'){
-                window.location.href = 'https://bethany.org/campaigns/step-in/dev?' + params;
+            if(currentWindowPath != '/campaigns/step-in'){
+                window.location.href = 'https://bethany.org/campaigns/step-in?' + params;
             }
         }
     }

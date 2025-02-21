@@ -311,7 +311,7 @@ function open_microsite(target){
     microWidget.classList.replace('close', 'open');
     microWidget.style = 'height: ' + (window.innerHeight) + 'px;';
     document.querySelector('body').style.overflowY = 'hidden';
-    var params = new URLSearchParams(window.location.search);
+    var params = window.location.search;
     let obj = {
         "Foster":{"title": "Foster", "hero": "Have a front row seat", 
             'copy':{

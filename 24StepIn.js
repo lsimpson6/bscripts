@@ -324,7 +324,7 @@ function open_microsite(target){
             },
             'button':{
                 cta: [
-                    ["Take the First Step", "/"]
+                    ["Take the First Step", "#contact"]
                 ]
             },
         },
@@ -340,8 +340,8 @@ function open_microsite(target){
             },
             'button':{
                 cta: [
-                    ["Explore Open Positions", "/"],
-                    ["Stay in Touch", "/"]
+                    ["Explore Open Positions", "https://bethany.csod.com/ux/ats/careersite/4/home"],
+                    ["Stay in Touch", "#contact"]
                 ]
             },
         },
@@ -357,8 +357,8 @@ function open_microsite(target){
             },
             'button':{
                 cta: [
-                    ["Donate Now", "/"],
-                    ["Learn More", "/"]
+                    ["Donate Now", "/campaigns/step-in/give"],
+                    ["Learn More", "#contact"]
                 ]
             },
         }

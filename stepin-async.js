@@ -1,6 +1,4 @@
-window.addEventListener("load", redirectT());
-
-function redirectT(){
+window.onload = function() {
     const currentWindowPathT = window.location.pathname;
     var initWindowWidthT = window.innerWidth;
     var paramsT = window.location.search;
@@ -17,4 +15,4 @@ function redirectT(){
             }
         }
     }
-}
+};

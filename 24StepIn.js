@@ -426,6 +426,7 @@ function open_microsite(target){
 
             a.setAttribute('href', href);
             a.textContent = text;
+            a.setAttribute('onClick',  'close_microsite()');
             a.classList.add('cta', 'cta-button', 'btn', 'btn-primary', 'mr-3', 'todo');
             a.style ='opacity: 0; transform: translateY(20px); transition: .3s ease all';
             

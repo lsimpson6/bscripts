@@ -1,4 +1,4 @@
-window.addEventListener("load", redirect()}
+window.addEventListener("load", redirect());
 const currentWindowPathT = window.location.pathname;
 var initWindowWidthT = window.innerWidth;
 function redirect(){

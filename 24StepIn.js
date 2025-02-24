@@ -1,5 +1,9 @@
 const currentWindowPath = window.location.pathname;
 var initWindowWidth = window.innerWidth;
+window.addEventListener('load', ()=>{
+redirect();
+}) 
+
 window.addEventListener('resize', ()=>{
 redirect();
 }) 

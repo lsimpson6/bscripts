@@ -391,7 +391,7 @@ function open_microsite(target){
             a.textContent = text;
             a.classList.add('cta', 'cta-button', 'btn', 'btn-primary', 'mr-3', 'todo');
             a.style ='opacity: 0; transform: translateY(20px); transition: .3s ease all';
-            
+            a.setAttribute('onClick',  'close_microsite()');
             setTimeout(()=>{
                 a.style ='opacity: 1; transform: translateY(00px); transition: .3s ease all;';
             }, 100)

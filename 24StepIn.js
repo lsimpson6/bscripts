@@ -1,9 +1,5 @@
 const currentWindowPath = window.location.pathname;
 var initWindowWidth = window.innerWidth;
-window.addEventListener('load', ()=>{
-redirect();
-}) 
-
 window.addEventListener('resize', ()=>{
 redirect();
 }) 
@@ -18,7 +14,7 @@ function redirect(){
                 window.location.href = 'https://bethany.org/campaign/step-in' + params;
             }        
             }else{
-            if(currentWindowPath != '/campaigns/step-in/dev'){
+            if(currentWindowPath != '/campaigns/step-in'){
                 window.location.href = 'https://bethany.org/campaigns/step-in' + params;
             }
         }
